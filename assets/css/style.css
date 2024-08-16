@@ -1,0 +1,879 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 100px;
+    position: absolute;
+    width: -webkit-fill-available;
+}
+.navlinks img{
+    width: 150px;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-flex;
+}
+.navbar ul li a{
+    text-decoration: none;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 16px;
+    
+}
+.background-video{
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    margin-bottom: -5px;
+
+}
+:root{
+    --grad1: #03a9f4;
+    --grad2: #f441a5;
+    --grad3: #8120f9;
+    --grad4: #03a9f4;
+}
+
+.navbar-btn button {
+    padding: 14px 45px;
+    border-radius: 100px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(90deg, var(--grad1), var(--grad2), var(--grad3), var(--grad4));
+    background-size: 400%;
+    z-index: 1;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.navbar-btn button:hover {
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+.navbar-btn button:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: 0;
+    background: linear-gradient(90deg, var(--grad1), var(--grad2), var(--grad3), var(--grad4));
+    background-size: 400%;
+    border-radius: 100px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.navbar-btn button:hover:before {
+    filter: blur(20px);
+    opacity: 0.6;
+    animation: animate 8s linear infinite;
+
+}
+
+   /* Contact from css */
+
+.card-box{
+    position: relative;
+    background-image: url(../img/Shut.jpg);
+    background-repeat: no-repeat;
+    height: 680px;
+    width: 50%;
+}
+.card-gradient{
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       top: 0;
+       content: '';
+       background: linear-gradient(90deg, rgba(0,5,70,0.7) 0%, rgba(0,0,0,0.9) 100%);
+}
+   
+.form {
+    padding: 20px;
+    background-color: #f9f9f9; 
+    border-radius: 10px; 
+    position: relative;
+    z-index: 2;
+    width: 45%;
+}
+
+.form label {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"],
+.form select,
+.form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.form button[type="submit"] {
+    padding: 14px 35px;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #0067ff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form button[type="submit"]:hover {
+    background-color: #0067ff; 
+}
+
+.Contact-from{
+ display: flex;
+ align-items: center;
+
+}
+.card-box h2 {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    color: #ffff;
+    padding-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block; 
+}
+
+.card-box h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 32px;
+    width: 25%;
+    height: 9px; 
+    background-color: #0063ff; 
+}
+
+.main-card1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-top: 18px;
+    gap: 20px;
+}
+.card1{
+    width: 270px;
+    height: 220px;
+    text-align: center;
+    background-color: #130A1FA6;
+    border-radius: 14px;
+    border: solid 1px #FDFDFD40;
+    padding: 25px 8px 0px 8px;
+}
+
+.card1:hover {
+    background: linear-gradient(216deg, rgba(15,28,122,1) 0%, rgba(14,2,31,1) 100%);
+        
+}
+.card1 img{
+    width: 26%;
+}
+.card1 h1{
+    font-size: 18px;
+    color: #f3f3f3;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    margin-top: 5px;
+}
+.card1 p{
+    font-size: 16px;
+    color: #fdfdfd;
+    font-family: "Poppins", sans-serif;
+    margin-top: 15px;
+    line-height: 25px;
+
+}
+.zindex{
+    position: relative;
+    z-index: 5;
+}
+
+
+/* -------------Footer-------- */
+.footer-box{
+    background-color: #121437;
+}
+
+.main-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 80px 15px 80px;
+    width: -webkit-fill-available;
+}
+.footerlink img{
+    width: 140px;
+}
+.main-footer ul li{
+    list-style: none;
+    display: inline-flex;
+}
+.main-footer ul li a{
+    text-decoration: none;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 16px;
+    
+}
+.footer-icon i{
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+}
+.footer2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 80px 25px 80px;
+}
+.reserved h1 a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    padding: 7px;
+}
+.reserved2 h1{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+.border-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(216deg, rgb(18, 20, 55) 5%, rgb(255, 255, 255) 50%, rgb(18, 20, 55) 95%);
+}
+.border-line2{
+    display: none;
+}
+.menu-footer{
+    display: none;
+}
+.footer-icon2{
+    display: none;
+}
+.hero-section{
+    position: relative;
+}
+.Hero-textbox{
+    position: absolute;
+    color: #fff;
+    z-index: 999999999;
+    bottom: 135px;
+    padding-left: 40px;
+    max-width: 420px;
+    line-height: 40px;
+    z-index: 1;
+}
+.Hero-textbox h1{
+    font-family: "Poppins", Sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+}
+.Hero-textbox p{
+    font-family: "Poppins", Sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.Technology{
+    background-color: #121437;
+    position: relative;
+     z-index: 999999999999999;
+}
+.Technology-text h1{
+    color: #FFFFFF;
+    font-family: "Poppins", Sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+
+
+.animated-textbar {
+    position: relative;
+    padding: 51px 0;
+    overflow: hidden;
+  }
+  
+  .animated-textbar .textbar-background {
+    background: url("../img/common/running-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .animated-textbar .textbar-background::before {
+    background-color: var(--bisstek-color-primary);
+    mix-blend-mode: multiply;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .animated-textbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 60px;
+  }
+  
+  .animated-textbar ul li {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 24px;
+    color: var(--rr-color-common-white);
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    font-size: 100px;
+    line-height: 1;
+  }
+  
+  .animated-textbar ul li::after {
+    content: "";
+    background: url(../img/icons/stroke-star.png) no-repeat;
+    width: 60px;
+    height: 60px;
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: -55px;
+  }
+  
+  
+  .scroller__inner {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .animated-textbar .text-stroke {
+    color: var(--rr-color-common-white);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--rr-color-common-white);
+  }
+  
+  .scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s)
+      var(--_animation-direction, forwards) linear infinite;
+  }
+  .scroller[data-animated="true"] .scroller__inner.inner-2 {
+    animation: scroll var(--_animation-duration, 40s)
+      var(--_animation-direction, reverse) linear infinite;
+  }
+  
+  .scroller[data-direction="right"] {
+    --_animation-direction: reverse;
+  }
+  
+  .scroller[data-direction="left"] {
+    --_animation-direction: forwards;
+  }
+  
+  .scroller[data-speed="fast"] {
+    --_animation-duration: 80s;
+  }
+  
+  .scroller[data-speed="slow"] {
+    --_animation-duration: 100s;
+  }
+  
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+  .scroller-img{
+    width: 180px;
+  }
+  .header-btn{
+    display: none;
+  }
+  
+
+
+  /* -----------------------Parallax Section----------------- */
+
+  .parallax{
+    background-image: url(../img/s21.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 580px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .parallax-textbox{
+    z-index: 5;
+  }
+  .parallax-textbox h1{
+     font-size: 50px;
+     color: #fff;
+    font-family: "Poppins", Sans-serif;
+    /* padding-top: 180px; */
+    max-width: 600px;
+    z-index: 9999999999999;
+    position: relative;
+    font-weight: 700;
+  }
+  .parallax-textbox p{
+    font-size: 18px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   font-weight: 400;
+   line-height: 30px;
+   max-width: 605px;
+   padding-top: 50px;
+   z-index: 10;
+    position: relative;
+ }
+ 
+ .parallax-image img{
+    position: absolute;
+    top: 110px;
+    left: 150px;
+    z-index: 0;
+}
+  /* -----------------------Parallax2 Section----------------- */
+
+
+.parallax2{
+    background-image: url(../img/slide-bg1.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 580px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.parallax-textbox2 h1{
+    padding-left: 200px;
+    font-size: 55px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   max-width: 450px;
+   z-index: 9999999999999;
+   position: relative;
+   font-weight: 800;
+}
+.parallax-textbox2 h2{
+    padding-left: 200px;
+    font-size: 20px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   max-width: 450px;
+   z-index: 9999999999999;
+   line-height: 30px;
+   position: relative;
+   font-weight: 700;
+   padding-top: 5px;
+}
+.parallax-textbox2 p{
+   padding-top: 10px;
+    padding-left: 200px;
+    font-size: 18px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   font-weight: 400;
+   line-height: 30px;
+   max-width: 485px;
+}
+.parallax-light img{
+    position: absolute;
+    top: -55px;
+    right: 160px;
+    width: 40%;
+}
+.parallax-hand img{
+    position: absolute;
+    top: 335px;
+    right: 0;
+    width: 46%;
+}
+
+  /* -----------------------Parallax3 Section----------------- */
+
+
+  .parallax-data{
+    background-image: url(../img/s31.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 580px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.data-textbox h1{
+    padding-left: 200px;
+    font-size: 55px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   max-width: 450px;
+   z-index: 9999999999999;
+   position: relative;
+   font-weight: 800;
+}
+.data-textbox h2{
+    padding-left: 200px;
+    font-size: 20px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   max-width: 400px;
+   z-index: 9999999999999;
+   line-height: 30px;
+   position: relative;
+   font-weight: 700;
+   padding-top: 5px;
+}
+.data-textbox p{
+    padding-top: 10px;
+     padding-left: 200px;
+     font-size: 18px;
+     color: #fff;
+    font-family: "Poppins", Sans-serif;
+    font-weight: 400;
+    line-height: 30px;
+    max-width: 478px;
+ }
+ .parallax-key img{
+    position: absolute;
+    top: 80px;
+    right: 200px;
+    width: 24%;
+}
+.parallax-bubble img{
+    position: absolute;
+    bottom: -100px;
+    right: 25%;
+    width: 45%;
+    z-index: 999999999;
+}
+.parallax-bubble2 img{
+    position: absolute;
+    bottom: -160px;
+    right: 0;
+    width: 55%;
+    /* z-index: -999; */
+    /* width: 45%; */
+}
+.parallax-bubble3 img{
+    position: absolute;
+    bottom: -70px;
+    right: 40;
+    width: 45%;
+}
+  /* -----------------------Parallax4 Section----------------- */
+
+
+  
+.parallax-model{
+    background-image: url(../img/s41.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 580px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 9999999999999;
+}
+.model-textbox h1{
+    padding-left: 200px;
+    font-size: 55px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   max-width: 450px;
+   z-index: 9999999999999;
+   position: relative;
+   font-weight: 800;
+}
+.model-textbox h2{
+    padding-left: 200px;
+    font-size: 20px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   max-width: 450px;
+   z-index: 9999999999999;
+   line-height: 30px;
+   position: relative;
+   font-weight: 700;
+   padding-top: 5px;
+}
+.model-textbox p{
+   padding-top: 10px;
+    padding-left: 200px;
+    font-size: 18px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   font-weight: 400;
+   line-height: 30px;
+   max-width: 485px;
+}
+.parallax-brain  img{
+    position: absolute;
+    top: -8px;
+    right: 160px;
+    width: 40%;
+}
+.parallax-hand2 img{
+    position: absolute;
+    top: 335px;
+    right: 0;
+    width: 46%;
+}
+ /* -----------------------Parallax5 Section----------------- */
+
+
+  
+ .parallax-business{
+    background-image: url(../img/space.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 580px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 9999999999999;
+}
+.business-textbox h1{
+    padding-left: 200px;
+    font-size: 55px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   max-width: 450px;
+   z-index: 9999999999999;
+   position: relative;
+   font-weight: 800;
+}
+.business-textbox h2{
+    padding-left: 200px;
+    font-size: 25px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   max-width: 380px;
+   z-index: 9999999999999;
+   line-height: 30px;
+   position: relative;
+   font-weight: 700;
+   padding-top: 5px;
+}
+.business-textbox p{
+   padding-top: 10px;
+    padding-left: 200px;
+    font-size: 18px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   font-weight: 400;
+   line-height: 30px;
+   max-width: 485px;
+}
+.parallax-rocket  img{
+    position: absolute;
+    top: 0px;
+    right: 100px;
+    width: 60%;
+}
+.parallax-world img{
+    position: absolute;
+    top: 260px;
+    right: 0;
+    width: 70%;
+}
+
+
+
+/* -----------------------Parallax6 Section----------------- */
+  
+.parallax-model{
+    background-image: url(../img/s41.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 580px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 9999999999999;
+}
+.model-textbox h1{
+    padding-left: 200px;
+    font-size: 55px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   max-width: 450px;
+   z-index: 9999999999999;
+   position: relative;
+   font-weight: 800;
+}
+.model-textbox h2{
+    padding-left: 200px;
+    font-size: 20px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   max-width: 450px;
+   z-index: 9999999999999;
+   line-height: 30px;
+   position: relative;
+   font-weight: 700;
+   padding-top: 5px;
+}
+.model-textbox p{
+   padding-top: 10px;
+    padding-left: 200px;
+    font-size: 18px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   font-weight: 400;
+   line-height: 30px;
+   max-width: 485px;
+}
+.parallax-brain  img{
+    position: absolute;
+    top: -8px;
+    right: 160px;
+    width: 40%;
+}
+.parallax-hand2 img{
+    position: absolute;
+    top: 335px;
+    right: 0;
+    width: 46%;
+}
+
+
+
+
+
+/* -----------------------Parallax7 Section----------------- */
+  
+.parallax-Industry{
+    background-image: url(../img/industrie-1.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 580px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 9999999999999;
+}
+.Industry-textbox h1{
+    padding-left: 200px;
+    font-size: 55px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   max-width: 450px;
+   z-index: 9999999999999;
+   position: relative;
+   font-weight: 800;
+}
+.Industry-textbox h2{
+    padding-left: 200px;
+    font-size: 20px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   max-width: 387px;
+   z-index: 9999999999999;
+   line-height: 30px;
+   position: relative;
+   font-weight: 700;
+   padding-top: 5px;
+}
+.Industry-textbox p{
+   padding-top: 10px;
+    padding-left: 200px;
+    font-size: 18px;
+    color: #fff;
+   font-family: "Poppins", Sans-serif;
+   font-weight: 400;
+   line-height: 30px;
+   max-width: 485px;
+}
+.parallax-lights5 img{
+    position: absolute;
+    top: 0px;
+    right: 320px;
+    width: 25%;
+}
+.parallax-booot img{
+    position: absolute;
+    top: 201px;
+    right: 0;
+    width: 35%;
+}
