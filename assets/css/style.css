@@ -2,6 +2,10 @@
     padding: 0px;
     margin: 0px;
 }
+section{
+    min-height: 100vh;
+    min-height: 100dvh;
+}
 .navbar{
     display: flex;
     justify-content: space-between;

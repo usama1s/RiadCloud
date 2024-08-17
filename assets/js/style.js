@@ -20,6 +20,54 @@ closeMenuBtn.addEventListener("click", () => {
   closeMenuBtn.style.display = "none";
 });
 
+// gsap.to("#image", {
+//   opacity: 1,
+//   scrollTrigger: {
+//     trigger: "#section",
+//     start: "top center",
+//     end: "center center",
+//     scrub: true,
+//     onEnter: () => gsap.to("#image", { opacity: 1, position: "fixed" }),
+//     onLeave: () => gsap.to("#image", { opacity: 0 }),
+//     onEnterBack: () => gsap.to("#image", { opacity: 1, position: "fixed" }),
+//     onLeaveBack: () => gsap.to("#image", { opacity: 0 }),
+//   }
+// });
+// Loop through each section
+document.querySelectorAll('section').forEach((section, index) => {
+  // Create the animation for each section
+  gsap.fromTo(section, 
+    { opacity: 0, y: 50 },  // Start state: slightly below and invisible
+    { 
+      opacity: 1, 
+      y: 0, 
+      scrollTrigger: {
+        trigger: section,
+        start: "top 80%", // When the top of the section hits 80% of the viewport height
+        end: "bottom 20%", // When the bottom of the section hits 20% of the viewport height
+        scrub: true,
+        toggleActions: "play none none reverse",
+      }
+    }
+  );
+
+  // Animate the images within the sections
+  gsap.fromTo(`#${section.id} img`, 
+    { opacity: 0, position: "fixed", y: 50 },  // Image starts slightly below and invisible
+    { 
+      opacity: 1, 
+      y: 0, 
+      scrollTrigger: {
+        trigger: section,
+        start: "top center",  // Image starts animating when the section reaches the center of the viewport
+        end: "bottom center", // Ends when the section's bottom reaches the center of the viewport
+        scrub: true,
+        toggleActions: "play none none reverse",
+      }
+    }
+  );
+});
+
 // -------------Effect---------------//
 
 gsap.from("#img32", {

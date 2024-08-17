@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Slideshow</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    section {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full screen height */
+      overflow: hidden;
+    }
+
+    .parallax-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      z-index: -1; /* Background is behind the content */
+      opacity: 0; /* Start with background invisible */
+      transition: opacity 1s ease-in-out;
+    }
+
+    .parallax-content {
+      position: relative;
+      z-index: 1; /* Content is above the background */
+      text-align: center;
+      color: white;
+      padding: 50px;
+    }
+
+    .parallax-image img {
+      width: 300px;
+      height: auto;
+      opacity: 0; /* Start with image invisible */
+      position: fixed; /* Fixed position */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.5;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="parallax" id="sec-1">
+    <div class="parallax-bg" id="bg1" style="background-image: url('https://via.placeholder.com/1200x800/FF5733/FFFFFF?text=Background+1');"></div>
+    <div class="parallax-content">
+      <div class="parallax-textbox" id="text1">
+        <h1>Automate your work, Accelerate your future.</h1>
+        <p>Tailored to your unique data landscape and industry nuances, Riad enables smarter decisions...</p>
+      </div>
+      <div class="parallax-image" id="img1">
+        <img src="https://via.placeholder.com/300/FF5733/FFFFFF?text=Image+1" alt="" id="img32">
+      </div>
+    </div>
+  </section>
+
+  <section class="parallax" id="sec-2">
+    <div class="parallax-bg" id="bg2" style="background-image: url('https://via.placeholder.com/1200x800/33FF57/FFFFFF?text=Background+2');"></div>
+    <div class="parallax-content">
+      <div class="parallax-textbox" id="text2">
+        <h1>Migrate & Modernize</h1>
+        <h2>Accelerate Your Business Through Transformation</h2>
+        <p>Revitalize your business landscape through strategic evolution...</p>
+      </div>
+      <div class="parallax-image" id="img2">
+        <img src="https://via.placeholder.com/300/33FF57/FFFFFF?text=Image+2" alt="" id="img33">
+      </div>
+    </div>
+  </section>
+
+  <section class="parallax" id="sec-3">
+    <div class="parallax-bg" id="bg3" style="background-image: url('https://via.placeholder.com/1200x800/3357FF/FFFFFF?text=Background+3');"></div>
+    <div class="parallax-content">
+      <div class="parallax-textbox" id="text3">
+        <h1>Data</h1>
+        <h2>Your Data Is Unique, Your Solutions Should Be as Well</h2>
+        <p>Unlock the power of your data to improve accuracy, security, and decision-making...</p>
+      </div>
+      <div class="parallax-image" id="img3">
+        <img src="https://via.placeholder.com/300/3357FF/FFFFFF?text=Image+3" alt="" id="img34">
+      </div>
+    </div>
+  </section>
+
+  <section class="parallax" id="sec-4">
+    <div class="parallax-bg" id="bg4" style="background-image: url('https://via.placeholder.com/1200x800/FF33A1/FFFFFF?text=Background+4');"></div>
+    <div class="parallax-content">
+      <div class="parallax-textbox" id="text4">
+        <h1>Model</h1>
+        <h2>Experts in AI & Large Language Models</h2>
+        <p>Riad poises you to lead in AI innovation, providing you with tools to harness your proprietary data...</p>
+      </div>
+      <div class="parallax-image" id="img4">
+        <img src="https://via.placeholder.com/300/FF33A1/FFFFFF?text=Image+4" alt="" id="img35">
+      </div>
+    </div>
+  </section>
+
+  <section class="parallax" id="sec-5">
+    <div class="parallax-bg" id="bg5" style="background-image: url('https://via.placeholder.com/1200x800/33FFA1/FFFFFF?text=Background+5');"></div>
+    <div class="parallax-content">
+      <div class="parallax-textbox" id="text5">
+        <h1>Business Transformation</h1>
+        <h2>Elevate your organization with intelligent solutions</h2>
+        <p>Leverage our solutions to streamline operations, saving costs while maximizing revenue...</p>
+      </div>
+      <div class="parallax-image" id="img5">
+        <img src="https://via.placeholder.com/300/33FFA1/FFFFFF?text=Image+5" alt="" id="img36">
+      </div>
+    </div>
+  </section>
+
+  <section class="parallax" id="sec-6">
+    <div class="parallax-bg" id="bg6" style="background-image: url('https://via.placeholder.com/1200x800/A133FF/FFFFFF?text=Background+6');"></div>
+    <div class="parallax-content">
+      <div class="parallax-textbox" id="text6">
+        <h1>Industry Focus</h1>
+        <h2>A world of AI possibilities, built for unique outcomes.</h2>
+        <p>Real-world problems require tailored solutions. That’s why Riad enables organizations...</p>
+      </div>
+      <div class="parallax-image" id="img6">
+        <img src="https://via.placeholder.com/300/A133FF/FFFFFF?text=Image+6" alt="" id="img37">
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+  <!-- <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate the background transitions
+    document.querySelectorAll('.parallax-bg').forEach((bg, index) => {
+      gsap.to(bg, {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: bg.parentNode, // Trigger on the parent section
+          start: "top top", // When the top of the section hits the top of the viewport
+          end: "bottom top", // When the bottom of the section hits the top of the viewport
+          scrub: true,
+          onEnter: () => gsap.to(bg, { opacity: 1 }), // Fade in when entering
+          onLeave: () => gsap.to(bg, { opacity: 0 }), // Fade out when leaving
+          on
+        }
+
+        </script> -->
+<script>
+    // Animate the background transitions
+document.querySelectorAll('.parallax-bg').forEach((bg, index) => {
+  gsap.to(bg, {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: bg.parentNode, // Trigger on the parent section
+      start: "top top", // When the top of the section hits the top of the viewport
+      end: "bottom top", // When the bottom of the section hits the top of the viewport
+      scrub: true,
+      onEnter: () => gsap.to(bg, { opacity: 1 }), // Fade in when entering
+      onLeave: () => gsap.to(bg, { opacity: 0 }), // Fade out when leaving
+      onEnterBack: () => gsap.to(bg, { opacity: 1 }), // Fade in when scrolling back
+      onLeaveBack: () => gsap.to(bg, { opacity: 0 }), // Fade out when scrolling back out
+    }
+  });
+});
+
+// Animate the content movement and image fade in/out
+document.querySelectorAll('.parallax-content').forEach((content) => {
+  gsap.fromTo(content, 
+    { opacity: 0, y: 50 }, // Start slightly below and invisible
+    { 
+      opacity: 1, 
+      y: 0, 
+      scrollTrigger: {
+        trigger: content.parentNode, // Trigger on the parent section
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        toggleActions: "play none none reverse",
+      }
+    }
+  );
+
+  gsap.fromTo(content.querySelector('img'), 
+    { opacity: 0, y: 50 }, 
+    { 
+      opacity: 1, 
+      y: 0, 
+      scrollTrigger: {
+        trigger: content.parentNode,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        toggleActions: "play none none reverse",
+      }
+    }
+  );
+});
+
+</script>
+</body>
+</html
