@@ -176,9 +176,10 @@ document.querySelectorAll('.parallax-bg').forEach((bg, index) => {
     opacity: 1,
     scrollTrigger: {
       trigger: bg.parentNode, // Trigger on the parent section
-      start: "top top", // When the top of the section hits the top of the viewport
-      end: "bottom top", // When the bottom of the section hits the top of the viewport
+      start: "20% 100%", // When the top of the section hits the top of the viewport
+      end: "80% 0%", // When the bottom of the section hits the top of the viewport
       scrub: true,
+      markers: true,
       onEnter: () => gsap.to(bg, { opacity: 1 }), // Fade in when entering
       onLeave: () => gsap.to(bg, { opacity: 0 }), // Fade out when leaving
       onEnterBack: () => gsap.to(bg, { opacity: 1 }), // Fade in when scrolling back
