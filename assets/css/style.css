@@ -468,7 +468,7 @@ section{
 
 
   /* -----------------------Parallax Section----------------- */
-
+/* 
   .parallax{
     background-image: url(../img/s21.jpg);
     background-position: center;
@@ -488,7 +488,7 @@ section{
      color: #fff;
     font-family: "Poppins", Sans-serif;
     /* padding-top: 180px; */
-    max-width: 600px;
+    /* max-width: 600px;
     z-index: 9999999999999;
     position: relative;
     font-weight: 700;
@@ -510,11 +510,11 @@ section{
     top: 110px;
     left: 150px;
     z-index: 0;
-}
+}  */
   /* -----------------------Parallax2 Section----------------- */
 
 
-.parallax2{
+/* .parallax2{
     background-image: url(../img/slide-bg1.jpg);
     background-position: center;
     background-size: cover;
@@ -567,10 +567,10 @@ section{
     top: 335px;
     right: 0;
     width: 46%;
-}
+} */
 
   /* -----------------------Parallax3 Section----------------- */
-
+/* 
 
   .parallax-data{
     background-image: url(../img/s31.jpg);
@@ -634,17 +634,17 @@ section{
     width: 55%;
     /* z-index: -999; */
     /* width: 45%; */
-}
+/* }
 .parallax-bubble3 img{
     position: absolute;
     bottom: -70px;
     right: 40;
     width: 45%;
-}
+}  */
   /* -----------------------Parallax4 Section----------------- */
 
 
-  
+/*   
 .parallax-model{
     background-image: url(../img/s41.jpg);
     background-position: center;
@@ -699,11 +699,11 @@ section{
     top: 335px;
     right: 0;
     width: 46%;
-}
+} */
  /* -----------------------Parallax5 Section----------------- */
 
 
-  
+/*   
  .parallax-business{
     background-image: url(../img/space.jpg);
     background-position: center;
@@ -759,11 +759,11 @@ section{
     right: 0;
     width: 70%;
 }
-
+ */
 
 
 /* -----------------------Parallax6 Section----------------- */
-  
+/*   
 .parallax-model{
     background-image: url(../img/s41.jpg);
     background-position: center;
@@ -818,14 +818,14 @@ section{
     top: 335px;
     right: 0;
     width: 46%;
-}
+} */
 
 
 
 
 
 /* -----------------------Parallax7 Section----------------- */
-  
+/*   
 .parallax-Industry{
     background-image: url(../img/industrie-1.jpg);
     background-position: center;
@@ -880,4 +880,331 @@ section{
     top: 201px;
     right: 0;
     width: 35%;
-}
+} */
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Poppins", Sans-serif;
+  }
+  
+  section {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+  }
+  
+  
+  .parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Background is behind the content */
+    opacity: 0; /* Start with background invisible */
+    transition: opacity 1s ease-in-out;
+  }
+  .parallax-content{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .parallax-textbox{
+      padding-top: 140px;
+  }
+  
+  .parallax-textbox h1{
+      font-size: 50px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     max-width: 600px;
+     font-weight: 700;
+  
+   }
+   .parallax-textbox p{
+    padding-top: 50px;
+    font-size: 18px;
+    color: #fff;
+    font-family: "Poppins", Sans-serif;
+    font-weight: 400;
+    max-width: 605px;
+    line-height: 30px;
+  
+  }
+  .parallax-image img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      display: block;
+      z-index: -1;
+  }
+  
+  .parallax-textbox2 {
+      padding-top: 120px;
+  }
+  
+  .parallax-textbox2 h1{
+      padding-left: 200px;
+      padding-bottom: 10px;
+      font-size: 55px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     max-width: 450px;
+     z-index: 9999999999999;
+     position: relative;
+     font-weight: 800;
+     margin: 0;
+  }
+  .parallax-textbox2 h2{
+      padding-left: 200px;
+      font-size: 20px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     max-width: 450px;
+     z-index: 9999999999999;
+     line-height: 30px;
+     position: relative;
+     font-weight: 700;
+     padding-bottom: 10px;
+
+  }
+  .parallax-textbox2 p{
+      padding-left: 200px;
+      font-size: 18px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     font-weight: 400;
+     line-height: 30px;
+     max-width: 485px;
+  }
+  .parallax-light img{
+      position: absolute;
+      top: -5px;
+      right: 160px;
+      width: 40%;
+  }
+  .parallax-hand img{
+      position: absolute;
+      top: 335px;
+      right: 0;
+      width: 46%;
+  }
+  
+  .parallax-textbox3 {
+      padding-top: 130px;
+  }
+  .parallax-textbox3 h1{
+      padding-left: 200px;
+      padding-bottom: 10px;
+      font-size: 55px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     max-width: 450px;
+     z-index: 9999999999999;
+     position: relative;
+     font-weight: 800;
+  }
+  .parallax-textbox3 h2{
+      padding-left: 200px;
+      padding-bottom: 10px;
+      font-size: 20px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     max-width: 400px;
+     z-index: 9999999999999;
+     line-height: 30px;
+     position: relative;
+     font-weight: 700;
+  }
+  .parallax-textbox3 p{
+       padding-left: 200px;
+       font-size: 18px;
+       color: #fff;
+      font-family: "Poppins", Sans-serif;
+      font-weight: 400;
+      line-height: 30px;
+      max-width: 478px;
+   }
+   .parallax-key img{
+      position: absolute;
+      top: 80px;
+      right: 200px;
+      width: 24%;
+  }
+  .parallax-bubble img{
+      position: absolute;
+      bottom: -100px;
+      right: 25%;
+      width: 45%;
+      z-index: 999999999;
+  }
+  .parallax-bubble2 img{
+      position: absolute;
+      bottom: -160px;
+      right: 0;
+      width: 55%;
+      /* z-index: -999; */
+      /* width: 45%; */
+  }
+  .parallax-bubble3 img{
+      position: absolute;
+      bottom: -70px;
+      right: 40;
+      width: 45%;
+  }
+  
+  
+  .parallax-textbox4{
+      padding-top: 180px;
+  }
+  
+  
+  .parallax-textbox4 h1{
+    padding-bottom: 10px;
+      padding-left: 200px;
+      font-size: 55px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     max-width: 450px;
+     z-index: 9999999999999;
+     position: relative;
+     font-weight: 800;
+  }
+  .parallax-textbox4 h2{
+    padding-bottom: 10px;
+    padding-bottom: 10px;
+      padding-left: 200px;
+      font-size: 20px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     max-width: 450px;
+     z-index: 9999999999999;
+     line-height: 30px;
+     position: relative;
+     font-weight: 700;
+  }
+  .parallax-textbox4 p{
+      padding-left: 200px;
+      font-size: 18px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     font-weight: 400;
+     line-height: 30px;
+     max-width: 485px;
+  }
+  .parallax-brain  img{
+      position: absolute;
+      top: -8px;
+      right: 160px;
+      width: 40%;
+  }
+  .parallax-hand2 img{
+      position: absolute;
+      top: 335px;
+      right: 0;
+      width: 46%;
+  }
+  
+  .parallax-textbox5{
+      padding-top: 120px;
+  }
+  .parallax-textbox5 h1{
+      padding-left: 200px;
+    padding-bottom: 10px;
+      font-size: 55px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     max-width: 450px;
+     z-index: 9999999999999;
+     position: relative;
+     font-weight: 800;
+     margin: 0;
+  }
+  .parallax-textbox5 h2{
+      padding-left: 200px;
+    padding-bottom: 10px;
+      font-size: 25px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     max-width: 380px;
+     z-index: 9999999999999;
+     line-height: 30px;
+     position: relative;
+     font-weight: 700;
+  }
+  .parallax-textbox5 p{
+      padding-left: 200px;
+      font-size: 18px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     font-weight: 400;
+     line-height: 30px;
+     max-width: 485px;
+  }
+  .parallax-rocket  img{
+      position: absolute;
+      top: 0px;
+      right: 100px;
+      width: 60%;
+  }
+  .parallax-world img{
+      position: absolute;
+      top: 260px;
+      right: 0;
+      width: 70%;
+  }
+  
+  .parallax-textbox6 {
+      padding-top: 140px;
+  }
+  .parallax-textbox6 h1{
+    padding-bottom: 10px; 
+      padding-left: 200px;
+      font-size: 55px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     max-width: 450px;
+     z-index: 9999999999999;
+     position: relative;
+     font-weight: 800;
+  }
+  .parallax-textbox6 h2{
+    padding-bottom: 10px;
+      padding-left: 200px;
+      font-size: 20px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     max-width: 387px;
+     z-index: 9999999999999;
+     line-height: 30px;
+     position: relative;
+     font-weight: 700;
+  }
+  .parallax-textbox6 p{
+      padding-left: 200px;
+      font-size: 18px;
+      color: #fff;
+     font-family: "Poppins", Sans-serif;
+     font-weight: 400;
+     line-height: 30px;
+     max-width: 485px;
+  }
+  .parallax-lights5 img{
+      position: absolute;
+      top: 0px;
+      right: 320px;
+      width: 25%;
+  }
+  .parallax-booot img{
+      position: absolute;
+      top: 201px;
+      right: 0;
+      width: 35%;
+  }

@@ -20,53 +20,57 @@ closeMenuBtn.addEventListener("click", () => {
   closeMenuBtn.style.display = "none";
 });
 
-// gsap.to("#image", {
-//   opacity: 1,
-//   scrollTrigger: {
-//     trigger: "#section",
-//     start: "top center",
-//     end: "center center",
-//     scrub: true,
-//     onEnter: () => gsap.to("#image", { opacity: 1, position: "fixed" }),
-//     onLeave: () => gsap.to("#image", { opacity: 0 }),
-//     onEnterBack: () => gsap.to("#image", { opacity: 1, position: "fixed" }),
-//     onLeaveBack: () => gsap.to("#image", { opacity: 0 }),
-//   }
-// });
-// Loop through each section
-document.querySelectorAll('section').forEach((section, index) => {
-  // Create the animation for each section
-  gsap.fromTo(section, 
-    { opacity: 0, y: 50 },  // Start state: slightly below and invisible
-    { 
-      opacity: 1, 
-      y: 0, 
-      scrollTrigger: {
-        trigger: section,
-        start: "top 80%", // When the top of the section hits 80% of the viewport height
-        end: "bottom 20%", // When the bottom of the section hits 20% of the viewport height
-        scrub: true,
-        toggleActions: "play none none reverse",
-      }
-    }
-  );
-
-  // Animate the images within the sections
-  gsap.fromTo(`#${section.id} img`, 
-    { opacity: 0, position: "fixed", y: 50 },  // Image starts slightly below and invisible
-    { 
-      opacity: 1, 
-      y: 0, 
-      scrollTrigger: {
-        trigger: section,
-        start: "top center",  // Image starts animating when the section reaches the center of the viewport
-        end: "bottom center", // Ends when the section's bottom reaches the center of the viewport
-        scrub: true,
-        toggleActions: "play none none reverse",
-      }
-    }
-  );
-});
+    // Animate the background transitions
+    document.querySelectorAll('.parallax-bg').forEach((bg, index) => {
+      gsap.to(bg, {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: bg.parentNode, // Trigger on the parent section
+          start: "20% 100%", // When the top of the section hits the top of the viewport
+          end: "80% 0%", // When the bottom of the section hits the top of the viewport
+          scrub: true,
+          markers: true,
+          // onEnter: () => gsap.to(bg, { opacity: 1 }), // Fade in when entering
+          // onLeave: () => gsap.to(bg, { opacity: 0 }), // Fade out when leaving
+          // onEnterBack: () => gsap.to(bg, { opacity: 1 }), // Fade in when scrolling back
+          // onLeaveBack: () => gsap.to(bg, { opacity: 0 }), // Fade out when scrolling back out
+        }
+      });
+    });
+    
+    // Animate the content movement and image fade in/out
+    document.querySelectorAll('.parallax-content').forEach((content) => {
+      gsap.fromTo(content, 
+        { opacity: 0, y: 50 }, // Start slightly below and invisible
+        { 
+          opacity: 1, 
+          y: 0, 
+          scrollTrigger: {
+            trigger: content.parentNode, // Trigger on the parent section
+            start: "top center",
+            end: "bottom center",
+            scrub: true,
+            toggleActions: "play none none reverse",
+          }
+        }
+      );
+    
+      gsap.fromTo(content.querySelector('img'), 
+        { opacity: 0, y: 50 }, 
+        { 
+          opacity: 1, 
+          y: 0, 
+          scrollTrigger: {
+            trigger: content.parentNode,
+            start: "top center",
+            end: "bottom center",
+            scrub: true,
+            toggleActions: "play none none reverse",
+          }
+        }
+      );
+    });
+    
 
 // -------------Effect---------------//
 
@@ -85,7 +89,7 @@ gsap.from("#text1", {
   scrollTrigger: {
     trigger: "#sec-1",
     start: "0 95%",
-    end: "50% 55%",
+    end: "50% 85%",
     scrub: true,
   },
 });
@@ -99,7 +103,7 @@ gsap.from("#light", {
   scrollTrigger: {
     trigger: "#imglight",
     start: "0 95%",
-    end: "50% 55%",
+    end: "50% 85%",
     scrub: true,
   },
 });
@@ -156,7 +160,7 @@ gsap.from("#bubble23", {
   scrollTrigger: {
     trigger: "#bubble21",
     start: "0 95%",
-    end: "50% 55%",
+    end: "50% 85%",
     scrub: true,
   },
 });
@@ -190,7 +194,7 @@ gsap.from("#brain2", {
   scrollTrigger: {
     trigger: "#brain1",
     start: "0 95%",
-    end: "50% 55%",
+    end: "50% 85%",
     scrub: true,
   },
 });
@@ -207,10 +211,10 @@ gsap.from("#hand2", {
 });
 
 
-gsap.from("#model2", {
+gsap.from("#text4", {
   y: 400,
   scrollTrigger: {
-    trigger: "#model1",
+    trigger: "#sec-4",
     start: "0 95%",
     end: "50% 55%",
     scrub: true,
@@ -242,16 +246,16 @@ gsap.from("#world2", {
   scrollTrigger: {
     trigger: "#world1",
     start: "0 95%",
-    end: "50% 55%",
+    end: "50% 85%",
     scrub: true,
   },
 });
 
 
-gsap.from("#business2", {
+gsap.from("#text5", {
   y: 400,
   scrollTrigger: {
-    trigger: "#business1",
+    trigger: "#sec-5",
     start: "0 95%",
     end: "50% 55%",
     scrub: true,
@@ -266,7 +270,7 @@ gsap.from("#lights2", {
   scrollTrigger: {
     trigger: "#lights51",
     start: "0 95%",
-    end: "50% 55%",
+    end: "50% 85%",
     scrub: true,
   },
 });
@@ -277,16 +281,16 @@ gsap.from("#booot2", {
   scrollTrigger: {
     trigger: "#booot1",
     start: "0 95%",
-    end: "50% 55%",
+    end: "50% 95%",
     scrub: true,
   },
 });
 
 
-gsap.from("#Industry2", {
+gsap.from("#text6", {
   y: 400,
   scrollTrigger: {
-    trigger: "#Industry1",
+    trigger: "#sec-6",
     start: "0 95%",
     end: "50% 55%",
     scrub: true,
