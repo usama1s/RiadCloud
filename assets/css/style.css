@@ -114,7 +114,7 @@ section{
 }
    
 .form {
-    padding: 20px;
+    padding: 20px 35px 0px 30px;
     background-color: #f9f9f9; 
     border-radius: 10px; 
     position: relative;
@@ -167,7 +167,7 @@ section{
 
 .Contact-from{
  display: flex;
- align-items: center;
+ /* align-items: center; */
 
 }
 .card-box h2 {
@@ -694,7 +694,7 @@ section{
     right: 160px;
     width: 40%;
 }
-.parallax-hand2 img{
+.parallax-hand-img img{
     position: absolute;
     top: 335px;
     right: 0;
@@ -813,7 +813,7 @@ section{
     right: 160px;
     width: 40%;
 }
-.parallax-hand2 img{
+.parallax-hand-img img{
     position: absolute;
     top: 335px;
     right: 0;
@@ -939,6 +939,7 @@ body, html {
   }
   .parallax-image img {
       position: absolute;
+      top: 80px;
       left: 0;
       right: 0;
       margin: auto;
@@ -986,7 +987,7 @@ body, html {
   }
   .parallax-light img{
       position: absolute;
-      top: -5px;
+      top: -30px;
       right: 160px;
       width: 40%;
   }
@@ -998,7 +999,7 @@ body, html {
   }
   
   .parallax-textbox3 {
-      padding-top: 130px;
+      padding-top: 50px;
   }
   .parallax-textbox3 h1{
       padding-left: 200px;
@@ -1034,30 +1035,30 @@ body, html {
    }
    .parallax-key img{
       position: absolute;
-      top: 80px;
+      top: 50px;
       right: 200px;
       width: 24%;
   }
   .parallax-bubble img{
       position: absolute;
-      bottom: -100px;
+      bottom: 80px;
       right: 25%;
-      width: 45%;
+      width: 35%;
       z-index: 999999999;
   }
   .parallax-bubble2 img{
       position: absolute;
-      bottom: -160px;
+      bottom: 50px;
       right: 0;
-      width: 55%;
+      width: 45%;
       /* z-index: -999; */
       /* width: 45%; */
   }
   .parallax-bubble3 img{
       position: absolute;
-      bottom: -70px;
-      right: 40;
-      width: 45%;
+      /* bottom: 70px; */
+      right: 40px;
+      width: 35%;
   }
   
   
@@ -1105,7 +1106,7 @@ body, html {
       right: 160px;
       width: 40%;
   }
-  .parallax-hand2 img{
+  .parallax-hand-img img{
       position: absolute;
       top: 335px;
       right: 0;
@@ -1113,7 +1114,7 @@ body, html {
   }
   
   .parallax-textbox5{
-      padding-top: 120px;
+      padding-top: 60px;
   }
   .parallax-textbox5 h1{
       padding-left: 200px;
@@ -1156,13 +1157,13 @@ body, html {
   }
   .parallax-world img{
       position: absolute;
-      top: 260px;
-      right: 0;
-      width: 70%;
+      top: 0px;
+      right: -50%;
+      width: 180%;
   }
   
   .parallax-textbox6 {
-      padding-top: 140px;
+      padding-top: 50px;
   }
   .parallax-textbox6 h1{
     padding-bottom: 10px; 
