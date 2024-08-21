@@ -1,226 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parallax Slideshow</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      font-family: Arial, sans-serif;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", Sans-serif;
+      }
 
-    section {
-      position: relative;
-      width: 100%;
-      height: 100vh; /* Full screen height */
-      overflow: hidden;
-    }
+      body {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+      }
 
-    .parallax-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
-      z-index: -1; /* Background is behind the content */
-      opacity: 0; /* Start with background invisible */
-      transition: opacity 1s ease-in-out;
-    }
+      main {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      }
 
-    .parallax-content {
-      position: relative;
-      z-index: 1; /* Content is above the background */
-      text-align: center;
-      color: white;
-      padding: 50px;
-    }
-
-    .parallax-image img {
-      width: 300px;
-      height: auto;
-      opacity: 0; /* Start with image invisible */
-      position: fixed; /* Fixed position */
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: opacity 1s ease-in-out;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.2em;
-      line-height: 1.5;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-  </style>
-</head>
-<body>
-
-  <section class="parallax" id="sec-1">
-    <div class="parallax-bg" id="bg1" style="background-image: url('https://via.placeholder.com/1200x800/FF5733/FFFFFF?text=Background+1');"></div>
-    <div class="parallax-content">
-      <div class="parallax-textbox" id="text1">
-        <h1>Automate your work, Accelerate your future.</h1>
-        <p>Tailored to your unique data landscape and industry nuances, Riad enables smarter decisions...</p>
-      </div>
-      <div class="parallax-image" id="img1">
-        <img src="https://via.placeholder.com/300/FF5733/FFFFFF?text=Image+1" alt="" id="flower-img">
-      </div>
-    </div>
-  </section>
-
-  <section class="parallax" id="sec-2">
-    <div class="parallax-bg" id="bg2" style="background-image: url('https://via.placeholder.com/1200x800/33FF57/FFFFFF?text=Background+2');"></div>
-    <div class="parallax-content">
-      <div class="parallax-textbox" id="sec-2-text">
-        <h1>Migrate & Modernize</h1>
-        <h2>Accelerate Your Business Through Transformation</h2>
-        <p>Revitalize your business landscape through strategic evolution...</p>
-      </div>
-      <div class="parallax-image" id="img2">
-        <img src="https://via.placeholder.com/300/33FF57/FFFFFF?text=Image+2" alt="" id="img33">
-      </div>
-    </div>
-  </section>
-
-  <section class="parallax" id="sec-3">
-    <div class="parallax-bg" id="bg3" style="background-image: url('https://via.placeholder.com/1200x800/3357FF/FFFFFF?text=Background+3');"></div>
-    <div class="parallax-content">
-      <div class="parallax-textbox" id="text3">
-        <h1>Data</h1>
-        <h2>Your Data Is Unique, Your Solutions Should Be as Well</h2>
-        <p>Unlock the power of your data to improve accuracy, security, and decision-making...</p>
-      </div>
-      <div class="parallax-image" id="img3">
-        <img src="https://via.placeholder.com/300/3357FF/FFFFFF?text=Image+3" alt="" id="img34">
-      </div>
-    </div>
-  </section>
-
-  <section class="parallax" id="sec-4">
-    <div class="parallax-bg" id="bg4" style="background-image: url('https://via.placeholder.com/1200x800/FF33A1/FFFFFF?text=Background+4');"></div>
-    <div class="parallax-content">
-      <div class="parallax-textbox" id="sec-4-text">
-        <h1>Model</h1>
-        <h2>Experts in AI & Large Language Models</h2>
-        <p>Riad poises you to lead in AI innovation, providing you with tools to harness your proprietary data...</p>
-      </div>
-      <div class="parallax-image" id="img4">
-        <img src="https://via.placeholder.com/300/FF33A1/FFFFFF?text=Image+4" alt="" id="img35">
-      </div>
-    </div>
-  </section>
-
-  <section class="parallax" id="sec-5">
-    <div class="parallax-bg" id="bg5" style="background-image: url('https://via.placeholder.com/1200x800/33FFA1/FFFFFF?text=Background+5');"></div>
-    <div class="parallax-content">
-      <div class="parallax-textbox" id="sec-5-text">
-        <h1>Business Transformation</h1>
-        <h2>Elevate your organization with intelligent solutions</h2>
-        <p>Leverage our solutions to streamline operations, saving costs while maximizing revenue...</p>
-      </div>
-      <div class="parallax-image" id="img5">
-        <img src="https://via.placeholder.com/300/33FFA1/FFFFFF?text=Image+5" alt="" id="img36">
-      </div>
-    </div>
-  </section>
-
-  <section class="parallax" id="sec-6">
-    <div class="parallax-bg" id="bg6" style="background-image: url('https://via.placeholder.com/1200x800/A133FF/FFFFFF?text=Background+6');"></div>
-    <div class="parallax-content">
-      <div class="parallax-textbox" id="sec-6-text">
-        <h1>Industry Focus</h1>
-        <h2>A world of AI possibilities, built for unique outcomes.</h2>
-        <p>Real-world problems require tailored solutions. That’s why Riad enables organizations...</p>
-      </div>
-      <div class="parallax-image" id="img6">
-        <img src="https://via.placeholder.com/300/A133FF/FFFFFF?text=Image+6" alt="" id="img37">
-      </div>
-    </div>
-  </section>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
-  <!-- <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Animate the background transitions
-    document.querySelectorAll('.parallax-bg').forEach((bg, index) => {
-      gsap.to(bg, {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: bg.parentNode, // Trigger on the parent section
-          start: "top top", // When the top of the section hits the top of the viewport
-          end: "bottom top", // When the bottom of the section hits the top of the viewport
-          scrub: true,
-          onEnter: () => gsap.to(bg, { opacity: 1 }), // Fade in when entering
-          onLeave: () => gsap.to(bg, { opacity: 0 }), // Fade out when leaving
-          on
+      .item {
+        width: 200px;
+        height: 300px;
+        list-style-type: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+        box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+        &:nth-child(1),
+        &:nth-child(2) {
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          transform: none;
+          border-radius: 0;
+          box-shadow: none;
+          opacity: 1;
+        }
+        .item::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          opacity: 0.5;
+          z-index: -1;
+          --background-overlay: "";
+          background-color: transparent;
+          background-image: linear-gradient(150deg, #000000 0%, #000000b5 100%);
         }
 
-        </script> -->
-<script>
-    // Animate the background transitions
-document.querySelectorAll('.parallax-bg').forEach((bg, index) => {
-  gsap.to(bg, {
-    opacity: 1,
-    scrollTrigger: {
-      trigger: bg.parentNode, // Trigger on the parent section
-      start: "20% 100%", // When the top of the section hits the top of the viewport
-      end: "80% 0%", // When the bottom of the section hits the top of the viewport
-      scrub: true,
-      markers: true,
-      onEnter: () => gsap.to(bg, { opacity: 1 }), // Fade in when entering
-      onLeave: () => gsap.to(bg, { opacity: 0 }), // Fade out when leaving
-      onEnterBack: () => gsap.to(bg, { opacity: 1 }), // Fade in when scrolling back
-      onLeaveBack: () => gsap.to(bg, { opacity: 0 }), // Fade out when scrolling back out
-    }
-  });
-});
-
-// Animate the content movement and image fade in/out
-document.querySelectorAll('.parallax-content').forEach((content) => {
-  gsap.fromTo(content, 
-    { opacity: 0, y: 50 }, // Start slightly below and invisible
-    { 
-      opacity: 1, 
-      y: 0, 
-      scrollTrigger: {
-        trigger: content.parentNode, // Trigger on the parent section
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
-        toggleActions: "play none none reverse",
+        &:nth-child(3) {
+          left: 50%;
+        }
+        &:nth-child(4) {
+          left: calc(50% + 220px);
+        }
+        &:nth-child(5) {
+          left: calc(50% + 440px);
+        }
+        &:nth-child(6) {
+          left: calc(50% + 660px);
+          opacity: 0;
+        }
+        &:nth-child(7) {
+          left: calc(50% + 880px);
+          opacity: 0;
+        }
+        &:nth-child(8) {
+          left: calc(50% + 1000px);
+          opacity: 0;
+        }
+        &:nth-child(9) {
+          left: calc(50% + 1120px);
+          opacity: 0;
+        }
       }
-    }
-  );
 
-  gsap.fromTo(content.querySelector('img'), 
-    { opacity: 0, y: 50 }, 
-    { 
-      opacity: 1, 
-      y: 0, 
-      scrollTrigger: {
-        trigger: content.parentNode,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
-        toggleActions: "play none none reverse",
+      .content {
+        width: min(30vw, 400px);
+        position: absolute;
+        top: 50%;
+        left: 7rem;
+        transform: translateY(-50%);
+        font: 400 0.85rem helvetica, sans-serif;
+        color: white;
+        text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        display: none;
+        & .title {
+          font-size: 18px;
+          font-weight: 600;
+          max-width: 330px;
+          line-height: 30px;
+        }
+        .title2 {
+          font-size: 25px;
+          font-weight: 700;
+          padding-top: 20px;
+          margin-bottom: 10px;
+        }
+
+        .description {
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 23px;
+          max-width: 350px;
+        }
+        .description2 {
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 23px;
+          margin: 20px 0px;
+          max-width: 350px;
+        }
+
+        & button {
+          width: fit-content;
+          background-color: rgba(0, 0, 0, 0.1);
+          color: white;
+          border: 2px solid white;
+          border-radius: 0.25rem;
+          padding: 0.75rem;
+          cursor: pointer;
+        }
       }
-    }
-  );
-});
 
-</script>
-</body>
-</html
+      .item:nth-of-type(2) .content {
+        display: block;
+        animation: show 0.75s ease-in-out 0.3s forwards;
+      }
+
+      @keyframes show {
+        0% {
+          filter: blur(5px);
+          transform: translateY(calc(-50% + 75px));
+        }
+        100% {
+          opacity: 1;
+          filter: blur(0);
+        }
+      }
+
+      .nav {
+        position: absolute;
+        bottom: 2rem;
+        left: 10%;
+        transform: translateX(-50%);
+        z-index: 5;
+        user-select: none;
+
+        & .btn {
+          background-color: transparent;
+          color: #fff;
+          border: 1px solid #fff;
+          margin: 0 0.25rem;
+          padding: 6px;
+          border-radius: 50%;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+          }
+        }
+      }
+
+      @media (width > 650px) and (width < 900px) {
+        .content {
+          & .title {
+            font-size: 1rem;
+          }
+          & .description {
+            font-size: 0.7rem;
+          }
+          & button {
+            font-size: 0.7rem;
+          }
+        }
+        .item {
+          width: 160px;
+          height: 270px;
+
+          &:nth-child(3) {
+            left: 50%;
+          }
+          &:nth-child(4) {
+            left: calc(50% + 170px);
+          }
+          &:nth-child(5) {
+            left: calc(50% + 340px);
+          }
+          &:nth-child(6) {
+            left: calc(50% + 510px);
+            opacity: 0;
+          }
+        }
+      }
+
+      @media (width < 650px) {
+        .content {
+          & .title {
+            font-size: 0.9rem;
+          }
+          & .description {
+            font-size: 0.65rem;
+          }
+          & button {
+            font-size: 0.7rem;
+          }
+        }
+        .item {
+          width: 130px;
+          height: 220px;
+
+          &:nth-child(3) {
+            left: 50%;
+          }
+          &:nth-child(4) {
+            left: calc(50% + 140px);
+          }
+          &:nth-child(5) {
+            left: calc(50% + 280px);
+          }
+          &:nth-child(6) {
+            left: calc(50% + 420px);
+            opacity: 0;
+          }
+        }
+      }
+    </style>
+    <main>
+      <ul class="slider">
+        <li
+          class="item"
+          style="background-image: url('assets/img/slider-_0002_9.webp')"
+        >
+          <div class="content">
+            <h2 class="title">
+              Powering Progress: AI Solutions for Enhanced Efficiency and Safety
+              in Oil & Gas Exploration.
+            </h2>
+            <h1 class="title2">Chemical, Oil & Gas</h1>
+            <p class="description">
+              We pioneer the integration of advanced AI technologies to unlock
+              unprecedented efficiency and sustainability while prioritizing
+              safety and compliance.
+            </p>
+            <p class="description2">
+              Our tailored solutions bolster predictive maintenance, mitigate
+              operational risks, and streamline supply chain logistics, ensuring
+              uninterrupted operations and maximizing asset value. Committed to
+              industry regulations and safety standards, we uphold compliance at
+              every stage, safeguarding environmental integrity and community
+              well-being.
+            </p>
+          </div>
+        </li>
+        <li
+          class="item"
+          style="background-image: url('assets/img/slider-_0003_8.webp')"
+        >
+          <div class="content">
+            <h2 class="title">"Estrange Bond"</h2>
+            <p class="description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+              fuga voluptatum, iure corporis inventore praesentium nisi. Id
+              laboriosam ipsam enim.
+            </p>
+          </div>
+        </li>
+        <li
+          class="item"
+          style="background-image: url('assets/img/slider-_0008_3.webp')"
+        >
+          <div class="content">
+            <h2 class="title">"The Gate Keeper"</h2>
+            <p class="description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+              fuga voluptatum, iure corporis inventore praesentium nisi. Id
+              laboriosam ipsam enim.
+            </p>
+          </div>
+        </li>
+        <li
+          class="item"
+          style="background-image: url('assets/img/slider-_0004_7.webp')"
+        >
+          <div class="content">
+            <h2 class="title">"Last Trace Of Us"</h2>
+            <p class="description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+              fuga voluptatum, iure corporis inventore praesentium nisi. Id
+              laboriosam ipsam enim.
+            </p>
+          </div>
+        </li>
+        <li
+          class="item"
+          style="background-image: url('assets/img/slider-_0000_11.webp')"
+        >
+          <div class="content">
+            <h2 class="title">"Urban Decay"</h2>
+            <p class="description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+              fuga voluptatum, iure corporis inventore praesentium nisi. Id
+              laboriosam ipsam enim.
+            </p>
+          </div>
+        </li>
+        <li
+          class="item"
+          style="background-image: url('assets/img/slider-_0001_10.webp')"
+        >
+          <div class="content">
+            <h2 class="title">"The Migration"</h2>
+            <p class="description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+              fuga voluptatum, iure corporis inventore praesentium nisi. Id
+              laboriosam ipsam enim.
+            </p>
+          </div>
+        </li>
+        <li
+          class="item"
+          style="background-image: url('assets/img/slider-_0009_2.webp')"
+        >
+          <div class="content">
+            <h2 class="title">"The Migration"</h2>
+            <p class="description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+              fuga voluptatum, iure corporis inventore praesentium nisi. Id
+              laboriosam ipsam enim.
+            </p>
+          </div>
+        </li>
+        <li
+          class="item"
+          style="background-image: url('assets/img/slider-_0005_6.webp')"
+        >
+          <div class="content">
+            <h2 class="title">"The Migration"</h2>
+            <p class="description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+              fuga voluptatum, iure corporis inventore praesentium nisi. Id
+              laboriosam ipsam enim.
+            </p>
+          </div>
+        </li>
+        <li
+          class="item"
+          style="background-image: url('assets/img/slider-_0006_5.webp')"
+        >
+          <div class="content">
+            <h2 class="title">"The Migration"</h2>
+            <p class="description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+              fuga voluptatum, iure corporis inventore praesentium nisi. Id
+              laboriosam ipsam enim.
+            </p>
+          </div>
+        </li>
+      </ul>
+      <nav class="nav">
+        <ion-icon class="btn prev" name="arrow-back-outline"></ion-icon>
+        <ion-icon class="btn next" name="arrow-forward-outline"></ion-icon>
+      </nav>
+    </main>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script>
+      const slider = document.querySelector(".slider");
+
+      function activate(e) {
+        const items = document.querySelectorAll(".item");
+        if(e.target.matches(".next")){ slider.append(items[0]);
+          console.log(items[0])
+        }
+        e.target.matches(".prev") && slider.prepend(items[items.length - 1]);
+      }
+
+      document.addEventListener("click", activate, false);
+    </script>
+  </body>
+</html>
+
+
