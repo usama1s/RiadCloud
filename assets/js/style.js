@@ -340,7 +340,6 @@ gsap.to("#sec-5 .parallax-world img", {
     start: "0% 100%", // When the top of the section hits the top of the viewport
     end: "20% 60%", // When the bottom of the section hits the top of the viewport
     scrub: true,
-    markers: true,
   },
 });
 // section 6
