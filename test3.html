@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Slick Slider</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        .slider-section {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+            background-size: cover;
+            background-position: center;
+            padding: 50px;
+            border-radius: 15px;
+            transition: background 0.6s ease; /* Smooth transition for background change */
+        }
+        .slick-list {
+            padding: 100px 27px; /* Set the padding for the slick-list */
+        }
+        .your-slider .slick-slide {
+            text-align: center;
+            width: 248px; /* Set slide width */
+            height: 410px; /* Set slide height */
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            transition: transform 0.6s ease; /* Smoother scaling animation */
+            margin: 0 20px; /* Increase space between slides */
+            cursor: pointer; /* Make the slides clickable */
+        }
+        .your-slider .slick-slide.active {
+            transform: scale(1.2); /* Scale active slide to 1.2 */
+            z-index: 1; /* Ensure the active slide is on top */
+        }
+        .your-slider h3 {
+            font-size: 24px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .slick-prev, .slick-next {
+            font-size: 0;
+            line-height: 0;
+            position: absolute;
+            bottom: -50px; /* Move buttons to the bottom */
+            display: block;
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            cursor: pointer;
+            color: transparent;
+            border: none;
+            outline: none;
+            background: transparent;
+            z-index: 1;
+        }
+        .slick-prev {
+            left: 50%;
+            transform: translateX(-150%);
+        }
+        .slick-next {
+            right: 50%;
+            transform: translateX(150%);
+        }
+        .slick-prev:before, .slick-next:before {
+            font-size: 30px;
+            color: #333;
+        }
+        .slick-dots {
+            position: absolute;
+            left: -40px; /* Move dots to the left */
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column; /* Stack dots vertically */
+        }
+        .slick-dots li {
+            margin: 5px 0;
+        }
+        .slick-dots li button {
+            font-size: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: transparent;
+            border: 2px solid #333;
+            opacity: 1;
+            transition: background 0.3s ease;
+        }
+        .slick-dots li.slick-active button {
+            background: #333;
+            color: #fff;
+            position: relative;
+        }
+        .slick-dots li.slick-active button:before {
+            content: attr(data-slide);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+        }
+        .content-div {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.6s ease; /* Smooth transition for background change */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slider-section">
+        <div class="your-slider">
+            <div style="background-image: url('https://via.placeholder.com/600x400/FF6347/ffffff?text=Slide+1');"><h3>Slide 1</h3></div>
+            <div style="background-image: url('https://via.placeholder.com/600x400/4682B4/ffffff?text=Slide+2');"><h3>Slide 2</h3></div>
+            <div style="background-image: url('https://via.placeholder.com/600x400/32CD32/ffffff?text=Slide+3');"><h3>Slide 3</h3></div>
+            <div style="background-image: url('https://via.placeholder.com/600x400/FFD700/ffffff?text=Slide+4');"><h3>Slide 4</h3></div>
+            <div style="background-image: url('https://via.placeholder.com/600x400/FF4500/ffffff?text=Slide+5');"><h3>Slide 5</h3></div>
+            <div style="background-image: url('https://via.placeholder.com/600x400/8A2BE2/ffffff?text=Slide+6');"><h3>Slide 6</h3></div>
+            <div style="background-image: url('https://via.placeholder.com/600x400/00CED1/ffffff?text=Slide+7');"><h3>Slide 7</h3></div>
+            <div style="background-image: url('https://via.placeholder.com/600x400/DC143C/ffffff?text=Slide+8');"><h3>Slide 8</h3></div>
+            <div style="background-image: url('https://via.placeholder.com/600x400/6B8E23/ffffff?text=Slide+9');"><h3>Slide 9</h3></div>
+            <div style="background-image: url('https://via.placeholder.com/600x400/8B4513/ffffff?text=Slide+10');"><h3>Slide 10</h3></div>
+        </div>
+        <div class="content-div">
+            <p>Content related to Slide 1</p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var $slider = $('.your-slider');
+
+            $slider.slick({
+                dots: true, // Show dots for navigation
+                infinite: true, // Infinite looping
+                speed: 300, // Transition speed
+                slidesToShow: 3, // Number of slides to show at once
+                slidesToScroll: 1, // Number of slides to scroll at once
+                autoplay: true, // Enable auto play
+                autoplaySpeed: 2000, // Auto play speed
+                arrows: true, // Show next/prev arrows
+                initialSlide: 0, // Start with the first slide
+                customPaging: function(slider, i) {
+                    return '<button data-slide="' + (i + 1) + '"></button>';
+                }
+            });
+
+            // Function to change background and content based on the active slide
+            function updateBackgroundAndContent(slideIndex) {
+                var activeSlide = $('.slick-slide[data-slick-index="' + slideIndex + '"]');
+                var bgImage = activeSlide.css('background-image');
+                
+                // Change section background
+                $('.slider-section').css('background-image', bgImage);
+
+                // Update content div
+                var slideContent = activeSlide.find('h3').text();
+                $('.content-div').html('<p>Content related to ' + slideContent + '</p>');
+            }
+
+            // Initial background and content setup
+            updateBackgroundAndContent(0);
+
+            // Update background and content on slide change
+            $slider.on('afterChange', function(event, slick, currentSlide){
+                $('.slick-slide').removeClass('active');
+                $('.slick-active').first().addClass('active');
+                updateBackgroundAndContent(currentSlide);
+            });
+
+            // Make inactive slides clickable
+            $slider.on('click', '.slick-slide', function(event){
+                var slideIndex = $(this).data("slick-index");
+                $slider.slick('slickGoTo', slideIndex);
+            });
+
+            // Trigger afterChange on initial load
+            $slider.slick('slickGoTo', 0);
+        });
+    </script>
+
+</body>
+</html>
