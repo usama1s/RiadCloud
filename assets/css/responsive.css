@@ -385,6 +385,21 @@
     .parallax-key img{
         right: 100px;
     }
+    .parallax-rocket img{
+        right: -47px;
+    }
+    .parallax-textbox5 h1{
+        padding-left: 100px;
+    }
+    .parallax-textbox5 h2{
+        padding-left: 100px;
+    }
+    .parallax-textbox5 p{
+        padding-left: 100px;
+    }
+    .parallax-world img{
+        z-index: -1;
+    }
   }
 
  @media (max-width: 875px) {
@@ -448,6 +463,12 @@
         top: 176px;
         right: 80px;
         width: 40%;
+    }
+    .parallax-textbox5 h1 {
+        font-size: 40px;
+    }
+    .parallax-rocket img {
+     top: 40px;
     }
   }
   @media (max-width: 650px) {
@@ -517,6 +538,29 @@
     .parallax-brain img {
         right: 60px;
     }
+    .parallax-world img {
+        top: 146px;
+        right: -20%;
+        width: 124%;
+    }
+    .parallax-rocket img {
+        top: 100px;
+        right: 0px;
+    }
+    .parallax-textbox5 h1{
+        padding-left: 50px;
+        font-size: 35px;
+    }
+    .parallax-textbox5 h2{
+        padding-left: 50px;
+        font-size: 20px;
+    }
+    .parallax-textbox5 p{
+        padding-left: 50px;
+        font-size: 15px;
+        max-width: 350px;
+    }
+    
   }
 
   
@@ -587,9 +631,36 @@
         .parallax-brain img{
             right: 18px;
         }
+        .parallax-textbox5 h1{
+            font-size: 23px;
+            padding-left: 30px;
+            max-width: 200px;
+        }
+        .parallax-textbox5 h2{
+            font-size: 18px;
+            padding-left: 30px;
+            max-width: 280px;
+        }
+        .parallax-textbox5 p{
+            font-size: 15px;
+            padding-left: 30px;
+            max-width: 300px;
+        }
     }
     
+    @media (max-width: 420px) {
+        .parallax-world img {
+            top: 292px;
+            right: -5%;
+            width: 106%;
+        }
+        .parallax-rocket img {
+            top: 270px;
+            right: -33px;
+        }
+    }
 
+   
   @media (max-width: 375px) {
     .parallax-textbox3 h1{
    font-size: 25px;
@@ -630,6 +701,21 @@
     }
     .parallax-hand-img img {
         width: 50%;
+    }
+    .parallax-textbox5 h1 {
+        font-size: 20px;
+        padding-left: 20px;
+        max-width: 250px;
+    }
+    .parallax-textbox5 h2 {
+        font-size: 15px;
+        padding-left: 20px;
+        max-width: 280px;
+    }
+    .parallax-textbox5 p {
+        font-size: 13px;
+        padding-left: 20px;
+        max-width: 241px;
     }
     }
   
