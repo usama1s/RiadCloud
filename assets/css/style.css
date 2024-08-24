@@ -923,6 +923,10 @@ body, html {
     opacity: 0; /* Start with background invisible */
     transition: opacity 1s ease-in-out;
   }
+  .parallax-bg>div{
+      width: 100%;
+      height: 100%;
+  }
   .parallax-content{
       display: flex;
       justify-content: start;
@@ -932,7 +936,7 @@ body, html {
       margin: auto;
   }
   .parallax-textbox{
-      z-index: 1;
+      z-index: 15;
       width: 50%;
   }
   
@@ -1026,10 +1030,11 @@ body, html {
       width: 56%;
   }
 
-  .parallax-rocket  img{
+  .parallax-rocket{
       position: absolute;
-      top: 0px;
-      right: 100px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 7%;
       width: 60%;
   }
   .parallax-world{

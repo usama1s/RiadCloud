@@ -17,93 +17,125 @@ closeMenuBtn.addEventListener("click", () => {
   closeMenuBtn.style.display = "none";
 });
 
-
-
-
-
-
-
-
-
 gsap.registerPlugin(ScrollTrigger);
 
-const scrollLimit = 10; // Define the scroll limit in pixels
+const scrollLimit = 100; // Define the scroll limit in pixels
 
-document.querySelectorAll('.parallax').forEach((section, index) => {
+document.querySelectorAll(".parallax").forEach((section, index) => {
   ScrollTrigger.create({
     trigger: section,
-    start: "top 99%", // Trigger as soon as the top of the section hits the bottom of the viewport
-    end: "bottom 1%", // Continue until the bottom of the section hits the top of the viewport
-    onEnter: self => {
+    start: "top 99.99%",
+    end: "bottom 0.01%",
+    onEnter: (self) => {
       const scrollPos = window.scrollY;
       const sectionTop = section.offsetTop;
-      console.log("entering into: ", section);
       if (Math.abs(scrollPos - sectionTop) > scrollLimit) {
         gsap.to(window, {
           scrollTo: { y: sectionTop, autoKill: false },
-          duration: 1,
-          ease: "power2.inOut"
+          duration: 1.5,
+          ease: "power2.inOut",
         });
       }
-    }
+    },
   });
 
   ScrollTrigger.create({
-    trigger: section, // Trigger as soon as the top of the section hits the bottom of the viewport
-    start: "100% 1%",
-    end: "0% 99%", // Continue until the bottom of the section hits the top of the viewport
-    onEnterBack: self => {
+    trigger: section,
+    start: "100% 0.01%",
+    end: "0% 99.99%",
+    onEnterBack: (self) => {
       const scrollPos = window.scrollY;
       const sectionTop = section.offsetTop;
-      console.log("leaving into: ", section);
       if (Math.abs(scrollPos - sectionTop) > scrollLimit) {
         gsap.to(window, {
           scrollTo: { y: sectionTop, autoKill: false },
-          duration: 1,
-          ease: "power2.inOut"
+          duration: 1.5,
+          ease: "power2.inOut",
         });
       }
     },
   });
 });
 
+document.querySelectorAll(".parallax").forEach((parallaxSection) => {
+  const bg = parallaxSection.querySelector(".parallax-bg div");
 
+  ScrollTrigger.create({
+    trigger: parallaxSection,
+    start: "top 10%",
+    end: "bottom 10%",
+    scrub: true,
+    onEnter: () => {
+      gsap.to(bg, { scale: 1.3, duration: 15 });
+    },
+    onLeaveBack: () => {
+      gsap.to(bg, { scale: 1, duration: 15 });
+    },
+  });
+});
 
+document.querySelectorAll(".parallax").forEach((parallaxSection) => {
+  const bg = parallaxSection.querySelector(".parallax-bg");
 
+  ScrollTrigger.create({
+    trigger: parallaxSection,
+    start: "0% 100%",
+    end: "0% 50%",
+    onEnter: () => {
+      gsap.to(bg, { opacity: 1, duration: 1 });
+    },
+    onLeaveBack: () => {
+      gsap.to(bg, { opacity: 0, duration: 1 });
+    },
+  });
+});
 
+document.querySelectorAll(".parallax").forEach((parallaxSection) => {
+  const txt = parallaxSection.querySelector(".parallax-textbox");
 
-
-
-
-
-
+  gsap.fromTo(
+    txt,
+    { opacity: 0, y: 1600 }, // Start slightly below and invisible
+    {
+      opacity: 1,
+      y: 0,
+      scrollTrigger: {
+        trigger: parallaxSection, // Trigger on the parent section
+        start: "50% 90%",
+        end: "50% 60%",
+        scrub: true,
+        toggleActions: "play none none reverse",
+      },
+    }
+  );
+});
 
 // section 1
-gsap.to("#sec-1 .parallax-bg", {
-  opacity: 1,
-  scrollTrigger: {
-    trigger: "#sec-1", // Trigger on the parent section
-    start: "0% 100%", // When the top of the section hits the top of the viewport
-    end: "20% 40%", // When the bottom of the section hits the top of the viewport
-    scrub: true,
-  },
-});
-gsap.fromTo(
-  "#sec-1 .parallax-textbox",
-  { opacity: 0, y: 800 }, // Start slightly below and invisible
-  {
-    opacity: 1,
-    y: 0,
-    scrollTrigger: {
-      trigger: "#sec-1", // Trigger on the parent section
-      start: "0% 100%",
-      end: "60% 0%",
-      scrub: true,
-      toggleActions: "play none none reverse",
+// gsap.to("#sec-1 .parallax-bg", {
+//   opacity: 1,
+//   scrollTrigger: {
+//     trigger: "#sec-1", // Trigger on the parent section
+//     start: "0% 100%", // When the top of the section hits the top of the viewport
+//     end: "0% 50%", // When the bottom of the section hits the top of the viewport
+//     scrub: true,
+//   },
+// });
+// gsap.fromTo(
+//   "#sec-1 .parallax-textbox",
+//   { opacity: 0, y: 1600 }, // Start slightly below and invisible
+//   {
+//     opacity: 1,
+//     y: 0,
+//     scrollTrigger: {
+//       trigger: "#sec-1", // Trigger on the parent section
+//       start: "30% 100%",
+//       end: "40% 50%",
+//       scrub: true,
+//       toggleActions: "play none none reverse",
 
-    },
-  }
-);
+//     },
+//   }
+// );
 gsap.fromTo(
   "#sec-1 .parallax-image img",
   { opacity: 0, y: 400 },
@@ -112,8 +144,8 @@ gsap.fromTo(
     y: 0,
     scrollTrigger: {
       trigger: "#sec-1",
-      start: "0% 100%",
-      end: "40% 70%",
+      start: "30% 100%",
+      end: "40% 50%",
       scrub: true,
       toggleActions: "play none none reverse",
     },
@@ -124,27 +156,13 @@ gsap.fromTo(
 gsap.to("#sec-2 .parallax-bg", {
   opacity: 1,
   scrollTrigger: {
-    trigger: "#sec-2", // Trigger on the parent section
-    start: "0% 100%", // When the top of the section hits the top of the viewport
-    end: "20% 40%", // When the bottom of the section hits the top of the viewport
+    trigger: "#sec-2", // Trigger on the parent sectionstart: "30% 100%",
+    start: "30% 100%",
+    end: "40% 50%",
     scrub: true,
   },
 });
-gsap.fromTo(
-  "#sec-2 .parallax-textbox",
-  { opacity: 0, y: 1000 }, // Start slightly below and invisible
-  {
-    opacity: 1,
-    y: 0,
-    scrollTrigger: {
-      trigger: "#sec-2", // Trigger on the parent section
-      start: "0% 100%",
-      end: "70% 40%",
-      scrub: true,
-      toggleActions: "play none none reverse",
-    },
-  }
-);
+
 gsap.fromTo(
   "#sec-2 .parallax-light img",
   { opacity: 0, y: 800 },
@@ -153,13 +171,26 @@ gsap.fromTo(
     y: 0,
     scrollTrigger: {
       trigger: "#sec-2",
-      start: "0% 100%",
-      end: "20% 50%",
+      start: "30% 100%",
+      end: "40% 50%",
       scrub: true,
       toggleActions: "play none none reverse",
     },
   }
 );
+
+ScrollTrigger.create({
+  trigger: "#sec-2",
+  start: "50% 40%",
+  end: "50% 0%",
+  scrub: true,
+  onEnter: () => {
+    gsap.to("#sec-2 .parallax-light img", { y: -800, duration: 2 });
+  },
+  onLeaveBack: () => {
+    gsap.to("#sec-2 .parallax-light img", { y: 0, duration: 0.5 });
+  },
+});
 
 gsap.fromTo(
   "#sec-2 .parallax-hand img",
@@ -169,8 +200,8 @@ gsap.fromTo(
     y: 0,
     scrollTrigger: {
       trigger: "#sec-2",
-      start: "0% 100%",
-      end: "60% 20%",
+      start: "30% 100%",
+      end: "40% 50%",
       scrub: true,
       toggleActions: "play none none reverse",
     },
@@ -182,37 +213,22 @@ gsap.to("#sec-3 .parallax-bg", {
   opacity: 1,
   scrollTrigger: {
     trigger: "#sec-3", // Trigger on the parent section
-    start: "0% 100%", // When the top of the section hits the top of the viewport
-    end: "20% 40%", // When the bottom of the section hits the top of the viewport
+    start: "30% 100%",
+    end: "40% 50%",
     scrub: true,
   },
 });
-gsap.fromTo(
-  "#sec-3 .parallax-textbox",
-  { opacity: 0, y: 1000 }, // Start slightly below and invisible
-  {
-    opacity: 1,
-    y: 0,
-    scrollTrigger: {
-      trigger: "#sec-3", // Trigger on the parent section
-      start: "0% 100%",
-      end: "70% 40%",
-      scrub: true,
-      toggleActions: "play none none reverse",
-    },
-  }
-);
+
 gsap.fromTo(
   "#sec-3 .parallax-key img",
-  { opacity: 0, y: 800 },
+  { opacity: 0, y: 1000 },
   {
     opacity: 1,
     y: 0,
     scrollTrigger: {
       trigger: "#sec-3",
       start: "0% 100%",
-      end: "20% 50%",
-      scrub: true,
+      end: "70% 40%",
       toggleActions: "play none none reverse",
     },
   }
@@ -220,14 +236,14 @@ gsap.fromTo(
 
 gsap.fromTo(
   "#sec-3 .parallax-bubble img",
-  { opacity: 0, y: 600 },
+  { opacity: 0, y: 2400 },
   {
     opacity: 1,
     y: 0,
     scrollTrigger: {
       trigger: "#sec-3",
       start: "0% 100%",
-      end: "60% 40%",
+      end: "40% 55%",
       scrub: true,
       toggleActions: "play none none reverse",
     },
@@ -236,14 +252,14 @@ gsap.fromTo(
 
 gsap.fromTo(
   "#sec-3 .parallax-bubble2 img",
-  { opacity: 0, y: 500 },
+  { opacity: 0, y: 800 },
   {
     opacity: 1,
     y: 0,
     scrollTrigger: {
       trigger: "#sec-3",
-      start: "0% 100%",
-      end: "40% 40%",
+      start: "30% 100%",
+      end: "40% 50%",
       scrub: true,
       toggleActions: "play none none reverse",
     },
@@ -257,8 +273,8 @@ gsap.fromTo(
     y: 0,
     scrollTrigger: {
       trigger: "#sec-3",
-      start: "0% 100%",
-      end: "80% 40%",
+      start: "30% 100%",
+      end: "40% 40%",
       scrub: true,
       toggleActions: "play none none reverse",
     },
@@ -276,21 +292,6 @@ gsap.to("#sec-4 .parallax-bg", {
   },
 });
 
-gsap.fromTo(
-  "#sec-4 .parallax-textbox",
-  { opacity: 0, y: 1000 }, // Start slightly below and invisible
-  {
-    opacity: 1,
-    y: 0,
-    scrollTrigger: {
-      trigger: "#sec-4", // Trigger on the parent section
-      start: "0% 100%",
-      end: "70% 40%",
-      scrub: true,
-      toggleActions: "play none none reverse",
-    },
-  }
-);
 gsap.fromTo(
   "#sec-4 .parallax-brain img",
   { opacity: 0, y: 700 },
@@ -334,21 +335,6 @@ gsap.to("#sec-5 .parallax-bg", {
   },
 });
 
-gsap.fromTo(
-  "#sec-5 .parallax-textbox",
-  { opacity: 0, y: 1000 }, // Start slightly below and invisible
-  {
-    opacity: 1,
-    y: 0,
-    scrollTrigger: {
-      trigger: "#sec-5", // Trigger on the parent section
-      start: "0% 100%",
-      end: "70% 40%",
-      scrub: true,
-      toggleActions: "play none none reverse",
-    },
-  }
-);
 gsap.fromTo(
   "#sec-5 .parallax-rocket img",
   { opacity: 0, y: 700 },
@@ -421,21 +407,6 @@ gsap.to("#sec-6 .parallax-bg", {
   },
 });
 
-gsap.fromTo(
-  "#sec-6 .parallax-textbox",
-  { opacity: 0, y: 1000 }, // Start slightly below and invisible
-  {
-    opacity: 1,
-    y: 0,
-    scrollTrigger: {
-      trigger: "#sec-6", // Trigger on the parent section
-      start: "0% 100%",
-      end: "70% 40%",
-      scrub: true,
-      toggleActions: "play none none reverse",
-    },
-  }
-);
 gsap.fromTo(
   "#sec-6 .parallax-lights img",
   { opacity: 0, y: 750 },
