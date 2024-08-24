@@ -32,12 +32,12 @@ const scrollLimit = 10; // Define the scroll limit in pixels
 document.querySelectorAll('.parallax').forEach((section, index) => {
   ScrollTrigger.create({
     trigger: section,
-    start: "top bottom", // Trigger as soon as the top of the section hits the bottom of the viewport
-    end: "bottom top", // Continue until the bottom of the section hits the top of the viewport
+    start: "top 99%", // Trigger as soon as the top of the section hits the bottom of the viewport
+    end: "bottom 1%", // Continue until the bottom of the section hits the top of the viewport
     onEnter: self => {
       const scrollPos = window.scrollY;
       const sectionTop = section.offsetTop;
-
+      console.log("entering into: ", section);
       if (Math.abs(scrollPos - sectionTop) > scrollLimit) {
         gsap.to(window, {
           scrollTo: { y: sectionTop, autoKill: false },
@@ -45,11 +45,17 @@ document.querySelectorAll('.parallax').forEach((section, index) => {
           ease: "power2.inOut"
         });
       }
-    },
+    }
+  });
+
+  ScrollTrigger.create({
+    trigger: section, // Trigger as soon as the top of the section hits the bottom of the viewport
+    start: "100% 1%",
+    end: "0% 99%", // Continue until the bottom of the section hits the top of the viewport
     onEnterBack: self => {
       const scrollPos = window.scrollY;
       const sectionTop = section.offsetTop;
-
+      console.log("leaving into: ", section);
       if (Math.abs(scrollPos - sectionTop) > scrollLimit) {
         gsap.to(window, {
           scrollTo: { y: sectionTop, autoKill: false },
