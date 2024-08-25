@@ -72,7 +72,8 @@ document.querySelectorAll(".parallax").forEach((parallaxSection) => {
       },
     });
   });
-  const bg = parallaxSection.querySelectorAll(".parallax-bg>div");
+  const bg = parallaxSection.querySelector(".parallax-bg>div");
+
   ScrollTrigger.create({
     trigger: parallaxSection,
     start: "top 10%",
@@ -339,15 +340,7 @@ gsap.fromTo(
 );
 
 // section 4
-gsap.to("#sec-4 .parallax-bg", {
-  opacity: 1,
-  scrollTrigger: {
-    trigger: "#sec-4", // Trigger on the parent section
-    start: "0% 100%", // When the top of the section hits the top of the viewport
-    end: "20% 40%", // When the bottom of the section hits the top of the viewport
-    scrub: true,
-  },
-});
+
 
 gsap.fromTo(
   "#sec-4 .parallax-brain img",
@@ -414,15 +407,6 @@ gsap.fromTo(
 );
 
 // section 5
-gsap.to("#sec-5 .parallax-bg", {
-  opacity: 1,
-  scrollTrigger: {
-    trigger: "#sec-5", // Trigger on the parent section
-    start: "0% 100%", // When the top of the section hits the top of the viewport
-    end: "20% 40%", // When the bottom of the section hits the top of the viewport
-    scrub: true,
-  },
-});
 
 gsap.fromTo(
   "#sec-5 .parallax-rocket img",
@@ -486,15 +470,7 @@ gsap.fromTo(
 );
 // section 6
 
-gsap.to("#sec-6 .parallax-bg", {
-  opacity: 1,
-  scrollTrigger: {
-    trigger: "#sec-6", // Trigger on the parent section
-    start: "0% 100%", // When the top of the section hits the top of the viewport
-    end: "20% 40%", // When the bottom of the section hits the top of the viewport
-    scrub: true,
-  },
-});
+
 
 gsap.fromTo(
   "#sec-6 .parallax-lights img",
