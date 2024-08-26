@@ -57,7 +57,7 @@ const scrollLimit = 20; // Define the scroll limit in pixels
 //   });
 // });
 
-document.querySelectorAll(".parallax").forEach((parallaxSection) => {
+document.querySelectorAll(".parallax").forEach((parallaxSection, sectionIndex) => {
   parallaxSection.querySelectorAll(".parallax-image>div").forEach((imageDiv) => {
     ScrollTrigger.create({
       trigger: parallaxSection,
@@ -72,20 +72,23 @@ document.querySelectorAll(".parallax").forEach((parallaxSection) => {
       },
     });
   });
-  const bg = parallaxSection.querySelector(".parallax-bg>div");
+  if (sectionIndex!= 0) {
+    const bg = parallaxSection.querySelector(".parallax-bg>div");
 
-  ScrollTrigger.create({
-    trigger: parallaxSection,
-    start: "top 10%",
-    end: "bottom 10%",
-    scrub: true,
-    onEnter: () => {
-      gsap.to(bg, { scale: 1.3, duration: 15 });
-    },
-    onLeaveBack: () => {
-      gsap.to(bg, { scale: 1, duration: 15 });
-    },
-  });
+    ScrollTrigger.create({
+      trigger: parallaxSection,
+      start: "top 10%",
+      end: "bottom 10%",
+      scrub: true,
+      onEnter: () => {
+        gsap.to(bg, { scale: 1.3, duration: 15 });
+      },
+      onLeaveBack: () => {
+        gsap.to(bg, { scale: 1, duration: 15 });
+      },
+    });
+  }
+
 
   const bg2 = parallaxSection.querySelector(".parallax-bg");
   ScrollTrigger.create({
@@ -429,6 +432,38 @@ gsap.fromTo(
   { y: 0 },
   {
     y: -400,
+    scrollTrigger: {
+      trigger: "#sec-5",
+      start: "50% 30%",
+      end: "50% 0%",
+      scrub: true,
+      toggleActions: "play none none reverse",
+    },
+  }
+);
+
+gsap.fromTo(
+  "#sec-5 .parallax-smoke img",
+  { opacity: 0, y: 700 },
+  {
+    opacity: 1,
+    y: 0,
+    scrollTrigger: {
+      trigger: "#sec-5",
+      start: "0% 100%",
+      end: "40% 60%",
+      scrub: true,
+      toggleActions: "play none none reverse",
+    },
+  }
+);
+
+
+gsap.fromTo(
+  "#sec-5 .parallax-smoke img",
+  { y: 0, opacity: 1 },
+  {
+    y: 200, scale: 1.5, opacity: 0,
     scrollTrigger: {
       trigger: "#sec-5",
       start: "50% 30%",
