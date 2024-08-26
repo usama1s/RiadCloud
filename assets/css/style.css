@@ -925,8 +925,10 @@ section {
   transition: opacity 1s ease-in-out;
 }
 .parallax-bg>div{
+    background-size: cover;
     width: 100%;
     height: 100%;
+    background-repeat: no-repeat;
 }
 .parallax-content{
     display: flex;
@@ -1104,7 +1106,7 @@ width: 100%;
   overflow: hidden;
 }
 
-.slider-section::before {
+.slider-section .parallax-bg>div::before {
   content: "";
   position: absolute;
   top: 0;

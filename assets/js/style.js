@@ -121,15 +121,18 @@ document.querySelectorAll(".parallax").forEach((parallaxSection, sectionIndex) =
 
   const contentMain = parallaxSection.querySelector(".parallax-content");
   const content = parallaxSection.querySelector(".parallax-content>div");
-  gsap.to(content, {
-    scrollTrigger: {
-      trigger: contentMain, // The parallax section ID
-      start: "top top", // When the top of the section reaches the top of the viewport
-      end: "+=120%", // Extend the scroll time by 200% of the viewport height
-      pin: true, // Pin the content in place
-      scrub: true,
-    },
-  });
+  if (contentMain & content) {
+    gsap.to(content, {
+      scrollTrigger: {
+        trigger: contentMain, // The parallax section ID
+        start: "top top", // When the top of the section reaches the top of the viewport
+        end: "+=120%", // Extend the scroll time by 200% of the viewport height
+        pin: true, // Pin the content in place
+        scrub: true,
+      },
+    });
+  }
+ 
 });
 
 // section 1
@@ -666,7 +669,7 @@ $(document).ready(function () {
     var activeSlide = $('.slick-slide[data-slick-index="' + slideIndex + '"]');
     var bgImage = activeSlide.css("background-image");
 
-    $(".slider-section").css("background-image", bgImage);
+    $(".slider-section .parallax-bg>div").css("background-image", bgImage);
     var slideData = slideContentData[slideIndex];
     var slideContent = activeSlide.find("h3").text();
     var contentHtml =
