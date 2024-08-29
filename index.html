@@ -228,9 +228,7 @@
   </section>
   <section class="slider-section parallax">
     <div class="parallax-bg">
-      <div>
-
-      </div>
+      <div></div>
     </div>
     <div class="your-slider">
       <div style="background-image: url('assets/img/slider-_0002_9.webp ')">
@@ -267,10 +265,15 @@
         <h3>Professional Services</h3>
       </div>
     </div>
+    <div class="arrow">
+      <i class="fa-solid fa-arrow-left " id="left"></i>
+      <i class="fa-solid fa-arrow-right " id="right"></i>
+    </div>
     <div class="content-div">
-      <!-- <p>Content related to Slide 1</p -->
+      <!-- <p>Content related to Slide 1</p> -->
     </div>
   </section>
+  
 </main>
 
 
@@ -321,7 +324,7 @@
         <div class="zindex">
           <h2>Contact us</h2>
           <div class="main-card1">
-            <div class="card1">
+            <div class="card1" id="ai-expert-card">
               <img src="assets/img/support.svg" alt="" />
               <h1>Speak with an AI Expert</h1>
               <p>
@@ -329,7 +332,7 @@
                 customers.
               </p>
             </div>
-            <div class="card1">
+            <div class="card1" id="partnership-card">
               <img src="assets/img/handshake.svg" alt="" />
               <h1>Partnership Opportunities</h1>
               <p>We love collaborating with pioneers!</p>
@@ -338,12 +341,12 @@
           </div>
 
           <div class="main-card1">
-            <div class="card1">
+            <div class="card1" id="employment-card">
               <img src="assets/img/opportunity.svg" alt="" />
               <h1>Employment Opportunities</h1>
               <p>Ready to shape the future of AI?</p>
             </div>
-            <div class="card1">
+            <div class="card1" id="general-card">
               <img src="assets/img/conversation.svg" alt="" />
               <h1>General Inquiries</h1>
               <p>For any other questions that Claude can’t answer, for now.</p>
@@ -387,9 +390,10 @@
             />
           </label>
 
-          <label for="your-reason">
+          <label for="your-reason" class="w-label">
             Reason for Inquiry *
             <select id="your-reason" name="your-reason" required>
+              <option value="select">Select Inquiry </option>
               <option value="ai-expert">Speak with an AI Expert</option>
               <option value="partnership">Partnership Opportunities</option>
               <option value="employment">Employment Opportunities</option>

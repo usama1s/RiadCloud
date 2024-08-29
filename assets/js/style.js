@@ -466,10 +466,10 @@ gsap.fromTo(
   "#sec-5 .parallax-smoke img",
   { y: 0, opacity: 1 },
   {
-    y: 200, scale: 1.5, opacity: 0,
+    y: 200, scale: 1, opacity: 0,
     scrollTrigger: {
       trigger: "#sec-5",
-      start: "50% 30%",
+      start: "50% 55%",
       end: "50% 0%",
       scrub: true,
       toggleActions: "play none none reverse",
@@ -634,77 +634,205 @@ $(document).ready(function () {
     },
   ];
 
-  $slider.slick({
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000000,
-    arrows: true,
-    initialSlide: 0,
-    customPaging: function (slider, i) {
-      return '<button data-slide="' + (i + 1) + '"></button>';
-    },
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  });
+  $(document).ready(function() {
+    var $slider = $('.your-slider');
 
-  function updateBackgroundAndContent(slideIndex) {
-    var activeSlide = $('.slick-slide[data-slick-index="' + slideIndex + '"]');
-    var bgImage = activeSlide.css("background-image");
+    function updateBackgroundAndContent(slideIndex) {
+      var activeSlide = $('.slick-slide[data-slick-index="' + slideIndex + '"]');
+      var bgImage = activeSlide.css("background-image");
 
-    $(".slider-section .parallax-bg>div").css("background-image", bgImage);
-    var slideData = slideContentData[slideIndex];
-    var slideContent = activeSlide.find("h3").text();
-    var contentHtml =
-      "<h3 class='mainHeading'>" +
-      slideData.mainHeading +
-      "</h3>" +
-      "<h3 class='title2'>" +
-      slideData.title2 +
-      "</h3>" +
-      "<p class='description'>" +
-      slideData.description +
-      "</p>";
+      $(".slider-section .parallax-bg > div").css("background-image", bgImage);
+      var slideData = slideContentData[slideIndex];
+      var slideContent = activeSlide.find("h3").text();
+      var contentHtml =
+        "<h3 class='mainHeading'>" +
+        slideData.mainHeading +
+        "</h3>" +
+        "<h3 class='title2'>" +
+        slideData.title2 +
+        "</h3>" +
+        "<p class='description'>" +
+        slideData.description +
+        "</p>";
 
-    // Conditionally add description2
-    if (slideData.description2) {
-      contentHtml +=
-        "<p class='description2'>" + slideData.description2 + "</p>";
+      // Conditionally add description2
+      if (slideData.description2) {
+        contentHtml +=
+          "<p class='description2'>" + slideData.description2 + "</p>";
+      }
+
+      // Update the .content-div with the prepared content
+      $(".content-div").html(contentHtml);
     }
 
-    // Update the .content-div with the prepared content
-    $(".content-div").html(contentHtml);
+    // Initialize the slider
+    $slider.slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000000,
+      arrows: false, // Disable default arrows
+      initialSlide: 0,
+      customPaging: function (slider, i) {
+        return '<button data-slide="' + (i + 1) + '"></button>';
+      },
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
+
+    // Handle custom arrows
+    $('#left').on('click', function() {
+      $slider.slick('slickPrev');
+    });
+
+    $('#right').on('click', function() {
+      $slider.slick('slickNext');
+    });
+
+    $slider.on("afterChange", function (event, slick, currentSlide) {
+      $(".slick-slide").removeClass("active");
+      $(".slick-active").first().addClass("active");
+      updateBackgroundAndContent(currentSlide);
+    });
+
+    $slider.on("click", ".slick-slide", function (event) {
+      var slideIndex = $(this).data("slick-index");
+      $slider.slick("slickGoTo", slideIndex);
+    });
+
+    // Go to the initial slide
+    $slider.slick("slickGoTo", 0);
+  });
+});
+
+  // ----------------- seclect-hover -------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.hero-form');
+  const cards = document.querySelectorAll('.card1');
+  
+  form.addEventListener('change', function (event) {
+    if (event.target && event.target.id === 'your-reason') {
+      // Remove 'active' class from all cards
+      cards.forEach(card => card.classList.remove('active'));
+      
+      // Get the selected value
+      const selectedValue = event.target.value;
+      
+      // Add 'active' class to the corresponding card
+      const activeCard = document.getElementById(`${selectedValue}-card`);
+      if (activeCard) {
+        activeCard.classList.add('active');
+      }
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.hero-form');
+  const cards = document.querySelectorAll('.card1');
+
+  form.addEventListener('change', function (event) {
+    if (event.target && event.target.id === 'your-reason') {
+      // Remove 'active' class from all cards
+      cards.forEach(card => card.classList.remove('active'));
+
+      // Get the selected value
+      const selectedValue = event.target.value;
+
+      // Add 'active' class to the corresponding card
+      const activeCard = document.getElementById(`${selectedValue}-card`);
+      if (activeCard) {
+        activeCard.classList.add('active');
+      }
+    }
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.hero-form');
+  const cards = document.querySelectorAll('.card1');
+  const selectElement = document.getElementById('your-reason');
+
+  // Function to set the selected option in the dropdown
+  function setSelectValue(value) {
+    selectElement.value = value;
+    // Trigger a change event to update any listeners
+    selectElement.dispatchEvent(new Event('change'));
   }
 
-  updateBackgroundAndContent(0);
+  // Handle card clicks
+  cards.forEach(card => {
+    card.addEventListener('click', function () {
+      // Remove 'active' class from all cards
+      cards.forEach(c => c.classList.remove('active'));
 
-  $slider.on("afterChange", function (event, slick, currentSlide) {
-    $(".slick-slide").removeClass("active");
-    $(".slick-active").first().addClass("active");
-    updateBackgroundAndContent(currentSlide);
+      // Add 'active' class to the clicked card
+      this.classList.add('active');
+
+      // Get the id of the clicked card and map it to the select option value
+      const cardId = this.id;
+      let optionValue = '';
+
+      switch (cardId) {
+        case 'ai-expert-card':
+          optionValue = 'ai-expert';
+          break;
+        case 'partnership-card':
+          optionValue = 'partnership';
+          break;
+        case 'employment-card':
+          optionValue = 'employment';
+          break;
+        case 'general-card':
+          optionValue = 'general';
+          break;
+      }
+
+      // Set the selected value in the dropdown
+      if (optionValue) {
+        setSelectValue(optionValue);
+      }
+    });
   });
 
-  $slider.on("click", ".slick-slide", function (event) {
-    var slideIndex = $(this).data("slick-index");
-    $slider.slick("slickGoTo", slideIndex);
-  });
+  // Handle form dropdown changes
+  form.addEventListener('change', function (event) {
+    if (event.target && event.target.id === 'your-reason') {
+      // Remove 'active' class from all cards
+      cards.forEach(card => card.classList.remove('active'));
 
-  $slider.slick("slickGoTo", 0);
+      // Get the selected value
+      const selectedValue = event.target.value;
+
+      // Add 'active' class to the corresponding card
+      const activeCard = document.getElementById(`${selectedValue}-card`);
+      if (activeCard) {
+        activeCard.classList.add('active');
+      }
+    }
+  });
 });
+
+// ------------------seclect-hover-end-------------------
+
+
+
