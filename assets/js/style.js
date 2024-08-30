@@ -19,121 +19,87 @@ closeMenuBtn.addEventListener("click", () => {
 
 gsap.registerPlugin(ScrollTrigger);
 
-const scrollLimit = 20; // Define the scroll limit in pixels
+const scrollLimit = 20;
 
-// document.querySelectorAll(".parallax").forEach((section, index) => {
-//   ScrollTrigger.create({
-//     trigger: section,
-//     start: "top 99%",
-//     end: "bottom 1%",
-//     onEnter: (self) => {
-//       const scrollPos = window.scrollY;
-//       const sectionTop = section.offsetTop;
-//       if (Math.abs(scrollPos - sectionTop) > scrollLimit) {
-//         gsap.to(window, {
-//           scrollTo: { y: sectionTop, autoKill: false },
-//           duration: 1.5,
-//           ease: "power2.inOut",
-//         });
-//       }
-//     },
-//   });
+document
+  .querySelectorAll(".parallax")
+  .forEach((parallaxSection, sectionIndex) => {
+    parallaxSection
+      .querySelectorAll(".parallax-image>div")
+      .forEach((imageDiv) => {
+        ScrollTrigger.create({
+          trigger: parallaxSection,
+          start: "top 10%",
+          end: "bottom 10%",
+          scrub: true,
+          onEnter: () => {
+            gsap.to(imageDiv, { scale: 1.3, duration: 40 });
+          },
+          onLeaveBack: () => {
+            gsap.to(imageDiv, { scale: 1, duration: 40 });
+          },
+        });
+      });
+    if (sectionIndex != 0) {
+      const bg = parallaxSection.querySelector(".parallax-bg>div");
 
-//   ScrollTrigger.create({
-//     trigger: section,
-//     start: "100% 1%",
-//     end: "0% 99%",
-//     onEnterBack: (self) => {
-//       const scrollPos = window.scrollY;
-//       const sectionTop = section.offsetTop;
-//       if (Math.abs(scrollPos - sectionTop) > scrollLimit) {
-//         gsap.to(window, {
-//           scrollTo: { y: sectionTop, autoKill: false },
-//           duration: 1.5,
-//           ease: "power2.inOut",
-//         });
-//       }
-//     },
-//   });
-// });
-
-document.querySelectorAll(".parallax").forEach((parallaxSection, sectionIndex) => {
-  parallaxSection.querySelectorAll(".parallax-image>div").forEach((imageDiv) => {
-    ScrollTrigger.create({
-      trigger: parallaxSection,
-      start: "top 10%",
-      end: "bottom 10%",
-      scrub: true,
-      onEnter: () => {
-        gsap.to(imageDiv, { scale: 1.3, duration: 40 });
-      },
-      onLeaveBack: () => {
-        gsap.to(imageDiv, { scale: 1, duration: 40 });
-      },
-    });
-  });
-  if (sectionIndex!= 0) {
-    const bg = parallaxSection.querySelector(".parallax-bg>div");
-
-    ScrollTrigger.create({
-      trigger: parallaxSection,
-      start: "top 10%",
-      end: "bottom 10%",
-      scrub: true,
-      onEnter: () => {
-        gsap.to(bg, { scale: 1.3, duration: 15 });
-      },
-      onLeaveBack: () => {
-        gsap.to(bg, { scale: 1, duration: 15 });
-      },
-    });
-  }
-
-
-  const bg2 = parallaxSection.querySelector(".parallax-bg");
-  ScrollTrigger.create({
-    trigger: parallaxSection,
-    start: "0% 100%",
-    end: "0% 50%",
-    onEnter: () => {
-      gsap.to(bg2, { opacity: 1, duration: 1 });
-    },
-    onLeaveBack: () => {
-      gsap.to(bg2, { opacity: 0, duration: 1 });
-    },
-  });
-
-  const txt = parallaxSection.querySelector(".parallax-textbox");
-  gsap.fromTo(
-    txt,
-    { y: 1600 }, // Start slightly below and invisible
-    {
-      y: 0,
-      scrollTrigger: {
-        trigger: parallaxSection, // Trigger on the parent section
-        start: "50% 90%",
-        end: "50% 60%",
+      ScrollTrigger.create({
+        trigger: parallaxSection,
+        start: "top 10%",
+        end: "bottom 10%",
         scrub: true,
-        toggleActions: "play none none reverse",
-      },
+        onEnter: () => {
+          gsap.to(bg, { scale: 1.3, duration: 15 });
+        },
+        onLeaveBack: () => {
+          gsap.to(bg, { scale: 1, duration: 15 });
+        },
+      });
     }
-  );
 
-  const contentMain = parallaxSection.querySelector(".parallax-content");
-  const content = parallaxSection.querySelector(".parallax-content>div");
-  if (contentMain & content) {
-    gsap.to(content, {
-      scrollTrigger: {
-        trigger: contentMain, // The parallax section ID
-        start: "top top", // When the top of the section reaches the top of the viewport
-        end: "+=120%", // Extend the scroll time by 200% of the viewport height
-        pin: true, // Pin the content in place
-        scrub: true,
+    const bg2 = parallaxSection.querySelector(".parallax-bg");
+    ScrollTrigger.create({
+      trigger: parallaxSection,
+      start: "0% 100%",
+      end: "0% 50%",
+      onEnter: () => {
+        gsap.to(bg2, { opacity: 1, duration: 1 });
+      },
+      onLeaveBack: () => {
+        gsap.to(bg2, { opacity: 0, duration: 1 });
       },
     });
-  }
- 
-});
+
+    const txt = parallaxSection.querySelector(".parallax-textbox");
+    gsap.fromTo(
+      txt,
+      { y: 1600 }, // Start slightly below and invisible
+      {
+        y: 0,
+        scrollTrigger: {
+          trigger: parallaxSection, // Trigger on the parent section
+          start: "50% 90%",
+          end: "50% 60%",
+          scrub: true,
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    const contentMain = parallaxSection.querySelector(".parallax-content");
+    const content = parallaxSection.querySelector(".parallax-content>div");
+    if (contentMain & content) {
+      gsap.to(content, {
+        scrollTrigger: {
+          trigger: contentMain, // The parallax section ID
+          start: "top top", // When the top of the section reaches the top of the viewport
+          end: "+=120%", // Extend the scroll time by 200% of the viewport height
+          pin: true, // Pin the content in place
+          scrub: true,
+        },
+      });
+    }
+  });
 
 // section 1
 
@@ -347,7 +313,6 @@ gsap.fromTo(
 
 // section 4
 
-
 gsap.fromTo(
   "#sec-4 .parallax-brain img",
   { opacity: 0, y: 700 },
@@ -461,12 +426,13 @@ gsap.fromTo(
   }
 );
 
-
 gsap.fromTo(
   "#sec-5 .parallax-smoke img",
   { y: 0, opacity: 1 },
   {
-    y: 200, scale: 1, opacity: 0,
+    y: 200,
+    scale: 1,
+    opacity: 0,
     scrollTrigger: {
       trigger: "#sec-5",
       start: "50% 55%",
@@ -507,8 +473,6 @@ gsap.fromTo(
   }
 );
 // section 6
-
-
 
 gsap.fromTo(
   "#sec-6 .parallax-lights img",
@@ -634,11 +598,13 @@ $(document).ready(function () {
     },
   ];
 
-  $(document).ready(function() {
-    var $slider = $('.your-slider');
+  $(document).ready(function () {
+    var $slider = $(".your-slider");
 
     function updateBackgroundAndContent(slideIndex) {
-      var activeSlide = $('.slick-slide[data-slick-index="' + slideIndex + '"]');
+      var activeSlide = $(
+        '.slick-slide[data-slick-index="' + slideIndex + '"]'
+      );
       var bgImage = activeSlide.css("background-image");
 
       $(".slider-section .parallax-bg > div").css("background-image", bgImage);
@@ -698,12 +664,12 @@ $(document).ready(function () {
     });
 
     // Handle custom arrows
-    $('#left').on('click', function() {
-      $slider.slick('slickPrev');
+    $("#left").on("click", function () {
+      $slider.slick("slickPrev");
     });
 
-    $('#right').on('click', function() {
-      $slider.slick('slickNext');
+    $("#right").on("click", function () {
+      $slider.slick("slickNext");
     });
 
     $slider.on("afterChange", function (event, slick, currentSlide) {
@@ -717,93 +683,80 @@ $(document).ready(function () {
       $slider.slick("slickGoTo", slideIndex);
     });
 
-    // Go to the initial slide
     $slider.slick("slickGoTo", 0);
   });
 });
 
-  // ----------------- seclect-hover -------------------
+// ----------------- seclect-hover -------------------
 
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('.hero-form');
-  const cards = document.querySelectorAll('.card1');
-  
-  form.addEventListener('change', function (event) {
-    if (event.target && event.target.id === 'your-reason') {
-      // Remove 'active' class from all cards
-      cards.forEach(card => card.classList.remove('active'));
-      
-      // Get the selected value
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".hero-form");
+  const cards = document.querySelectorAll(".card1");
+
+  form.addEventListener("change", function (event) {
+    if (event.target && event.target.id === "your-reason") {
+      cards.forEach((card) => card.classList.remove("active"));
+
       const selectedValue = event.target.value;
-      
-      // Add 'active' class to the corresponding card
+
       const activeCard = document.getElementById(`${selectedValue}-card`);
       if (activeCard) {
-        activeCard.classList.add('active');
+        activeCard.classList.add("active");
       }
     }
   });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('.hero-form');
-  const cards = document.querySelectorAll('.card1');
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".hero-form");
+  const cards = document.querySelectorAll(".card1");
 
-  form.addEventListener('change', function (event) {
-    if (event.target && event.target.id === 'your-reason') {
-      // Remove 'active' class from all cards
-      cards.forEach(card => card.classList.remove('active'));
+  form.addEventListener("change", function (event) {
+    if (event.target && event.target.id === "your-reason") {
+      cards.forEach((card) => card.classList.remove("active"));
 
-      // Get the selected value
       const selectedValue = event.target.value;
 
-      // Add 'active' class to the corresponding card
       const activeCard = document.getElementById(`${selectedValue}-card`);
       if (activeCard) {
-        activeCard.classList.add('active');
+        activeCard.classList.add("active");
       }
     }
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".hero-form");
+  const cards = document.querySelectorAll(".card1");
+  const selectElement = document.getElementById("your-reason");
 
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('.hero-form');
-  const cards = document.querySelectorAll('.card1');
-  const selectElement = document.getElementById('your-reason');
-
-  // Function to set the selected option in the dropdown
   function setSelectValue(value) {
     selectElement.value = value;
-    // Trigger a change event to update any listeners
-    selectElement.dispatchEvent(new Event('change'));
+    selectElement.dispatchEvent(new Event("change"));
   }
 
   // Handle card clicks
-  cards.forEach(card => {
-    card.addEventListener('click', function () {
-      // Remove 'active' class from all cards
-      cards.forEach(c => c.classList.remove('active'));
+  cards.forEach((card) => {
+    card.addEventListener("click", function () {
+      cards.forEach((c) => c.classList.remove("active"));
 
-      // Add 'active' class to the clicked card
-      this.classList.add('active');
+      this.classList.add("active");
 
-      // Get the id of the clicked card and map it to the select option value
       const cardId = this.id;
-      let optionValue = '';
+      let optionValue = "";
 
       switch (cardId) {
-        case 'ai-expert-card':
-          optionValue = 'ai-expert';
+        case "ai-expert-card":
+          optionValue = "ai-expert";
           break;
-        case 'partnership-card':
-          optionValue = 'partnership';
+        case "partnership-card":
+          optionValue = "partnership";
           break;
-        case 'employment-card':
-          optionValue = 'employment';
+        case "employment-card":
+          optionValue = "employment";
           break;
-        case 'general-card':
-          optionValue = 'general';
+        case "general-card":
+          optionValue = "general";
           break;
       }
 
@@ -815,10 +768,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Handle form dropdown changes
-  form.addEventListener('change', function (event) {
-    if (event.target && event.target.id === 'your-reason') {
+  form.addEventListener("change", function (event) {
+    if (event.target && event.target.id === "your-reason") {
       // Remove 'active' class from all cards
-      cards.forEach(card => card.classList.remove('active'));
+      cards.forEach((card) => card.classList.remove("active"));
 
       // Get the selected value
       const selectedValue = event.target.value;
@@ -826,13 +779,20 @@ document.addEventListener('DOMContentLoaded', function () {
       // Add 'active' class to the corresponding card
       const activeCard = document.getElementById(`${selectedValue}-card`);
       if (activeCard) {
-        activeCard.classList.add('active');
+        activeCard.classList.add("active");
       }
     }
   });
 });
 
-// ------------------seclect-hover-end-------------------
-
-
-
+// ------------------select-hover-end-------------------
+document.addEventListener("DOMContentLoaded", function () {
+  const loader = document.getElementById("loader");
+  const video = document.getElementById("loader-video");
+  
+  video.addEventListener("ended", function () {
+    // Hide the loader and allow scrolling
+    loader.style.display = "none";
+    document.body.classList.remove("no-scroll");
+  });
+}); // Correctly closes the DOMContentLoaded event listener

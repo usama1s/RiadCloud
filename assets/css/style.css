@@ -14,7 +14,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 100px;
+  padding: 0px 100px;
   position: absolute;
   width: -webkit-fill-available;
 }
@@ -169,7 +169,7 @@ section {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
 }
-.w-label{
+.w-label {
   width: 104%;
 }
 .form input[type="checkbox"] {
@@ -276,11 +276,11 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 80px 15px 80px;
+  padding: 0px 80px 0px 80px;
   width: -webkit-fill-available;
 }
 .footerlink img {
-  width: 140px;
+  width: 170px;
 }
 .main-footer ul li {
   list-style: none;
@@ -347,7 +347,7 @@ section {
   position: absolute;
   color: #fff;
   z-index: 999999999;
-  bottom: 135px;
+  bottom: 50px;
   padding-left: 40px;
   max-width: 420px;
   line-height: 40px;
@@ -926,14 +926,14 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 100px;
+  padding: 0px 100px;
   position: absolute;
   width: -webkit-fill-available;
   z-index: 9999;
 }
 
 .navlinks img {
-  width: 150px;
+  width: 160px;
 }
 .nav-menu {
   display: flex;
@@ -1235,7 +1235,7 @@ section {
     width: 26%;
     right: 0;
   }
-  .arrow{
+  .arrow {
     display: none !important;
   }
 }
@@ -1294,7 +1294,7 @@ section {
   .parallax-smoke {
     width: 67%;
     top: 48%;
-}
+  }
 }
 
 @media (max-width: 420px) {
@@ -1394,11 +1394,8 @@ section {
   .parallax-smoke {
     width: 78%;
     top: 56%;
+  }
 }
-}
-
-
-
 
 .arrow {
   position: absolute;
@@ -1422,15 +1419,40 @@ section {
   transition: background-color 0.3s ease;
 }
 
-
-
 .card1.active {
-   background: linear-gradient(
+  background: linear-gradient(
     216deg,
     rgba(15, 28, 122, 1) 0%,
     rgba(14, 2, 31, 1) 100%
   );
 }
 
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
 
+/* Loader Styles */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000; /* Optional: Add background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* Ensure it's on top of everything */
+}
 
+#loader-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make sure video covers the whole screen */
+}
+
+body.loading {
+  overflow: hidden; /* Prevent scrolling while loader is visible */
+}
