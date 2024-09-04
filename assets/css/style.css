@@ -1296,7 +1296,7 @@ section {
   .Hero-textbox h1{
     display: none;
   }
-  .Hero-textbox p{
+  .Hero-textbox {
     display: none;
   }
 }
