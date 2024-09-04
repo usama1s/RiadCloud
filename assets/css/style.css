@@ -1169,7 +1169,7 @@ section {
   }
   .Hero-textbox {
     text-align: center;
-    bottom: 50px;
+    bottom: 15px;
     padding: 0px;
     max-width: none;
     width: 100%;
@@ -1290,8 +1290,16 @@ section {
     width: 67%;
     top: 48%;
   }
-}
 
+}
+@media (max-width: 490px) {
+  .Hero-textbox h1{
+    display: none;
+  }
+  .Hero-textbox p{
+    display: none;
+  }
+}
 @media (max-width: 420px) {
   .main-footer ul li a {
     padding: 9px;
