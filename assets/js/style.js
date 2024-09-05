@@ -796,3 +796,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.remove("no-scroll");
   });
 }); // Correctly closes the DOMContentLoaded event listener
+
+
+
