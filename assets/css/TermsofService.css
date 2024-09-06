@@ -26,10 +26,9 @@ body{
  color: #fff;
  font-weight: 700;
 }
-.textbox span{
-font-size: 22px;
+.span1{
+font-size: 28px;
 color: #fff;
-margin-bottom: 30px;
 font-weight: 700;
 line-height: 35px;
 }
