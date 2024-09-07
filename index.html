@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RIADCLOUD</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -12,19 +14,25 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
-  <body>
+<body class="no-scroll">
+  <div id="loader" class="loader">
+    <video id="loader-video" autoplay muted>
+      <source src="assets/img/Riad_cloud_v2.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+    
     <nav class="navbar">
       <div class="navlinks">
-        <img src="assets/img/riad-cloud4-07-Photoroom-2.webp" alt="Logo" />
+        <img src="assets/img/FInal-02.png" alt="Logo" />
       </div>
   
       <ul class="nav-menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Mission</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Industries</a></li>
+        <li><a href="index.html">Home</a></li>
+          <li><a href="#Mission">Mission</a></li>
+          <li><a href="#Services">Services</a></li>
+          <li><a href="#Industries">Industries</a></li>        
       <div class="border-line2"></div>
       <div class="menu-footer">
         <h1>Find us on social media</h1>
@@ -51,13 +59,13 @@
       </div>
           
     </nav>
-<section class="section hero-section">
+<section class="hero-section">
   <video class="background-video" autoplay muted loop>
     <source src="assets/img/video.mp4" type="video/mp4" />
   </video>
   <div class="Hero-textbox">
     <h1>Advancing creativity
-     with artificial intelligence</h1>
+     with artificial intelligence</h1> 
      <p>The future of your business starts here.
      </p>
      <div class="header-btn">
@@ -67,12 +75,11 @@
 </section>
 
 <main class="parallax-section">
-  
-  <section class="section parallax" id="sec-1">
+  <section class="parallax" id="sec-1">
     <div class="parallax-bg parallax-image" style="opacity: 1;">
       <div style="background-image: url(./assets/img/s21.jpg);"></div>
     </div>
-    <div class="parallax-content">
+    <div class="parallax-content" id="Services">
       <div>
         <div class="parallax-textbox">
           <h1>Automate your work, Accelerate your future.</h1>
@@ -87,11 +94,11 @@
     </div>
   </section>
 
-  <section class="section parallax" id="sec-2">
+  <section class="parallax" id="sec-2">
     <div class="parallax-bg parallax-image">
       <div style="background-image: url(./assets/img/slide-bg1.jpg)"></div>
     </div>
-    <div class="parallax-content">
+    <div class="parallax-content" >
       <div>
         <div class="parallax-textbox">
           <h1>Migrate & Modernize</h1>
@@ -226,11 +233,9 @@
       </div>
     </div>
   </section>
-  <section class="section slider-section parallax">
+  <section class="slider-section parallax">
     <div class="parallax-bg">
-      <div>
-
-      </div>
+      <div></div>
     </div>
     <div class="your-slider">
       <div style="background-image: url('assets/img/slider-_0002_9.webp ')">
@@ -267,10 +272,15 @@
         <h3>Professional Services</h3>
       </div>
     </div>
+    <div class="arrow">
+      <i class="fa-solid fa-arrow-left " id="left"></i>
+      <i class="fa-solid fa-arrow-right " id="right"></i>
+    </div>
     <div class="content-div">
-      <!-- <p>Content related to Slide 1</p -->
+      <!-- <p>Content related to Slide 1</p> -->
     </div>
   </section>
+  
 </main>
 
 
@@ -321,7 +331,7 @@
         <div class="zindex">
           <h2>Contact us</h2>
           <div class="main-card1">
-            <div class="card1">
+            <div class="card1" id="ai-expert-card">
               <img src="assets/img/support.svg" alt="" />
               <h1>Speak with an AI Expert</h1>
               <p>
@@ -329,7 +339,7 @@
                 customers.
               </p>
             </div>
-            <div class="card1">
+            <div class="card1" id="partnership-card">
               <img src="assets/img/handshake.svg" alt="" />
               <h1>Partnership Opportunities</h1>
               <p>We love collaborating with pioneers!</p>
@@ -338,12 +348,12 @@
           </div>
 
           <div class="main-card1">
-            <div class="card1">
+            <div class="card1" id="employment-card">
               <img src="assets/img/opportunity.svg" alt="" />
               <h1>Employment Opportunities</h1>
               <p>Ready to shape the future of AI?</p>
             </div>
-            <div class="card1">
+            <div class="card1" id="general-card">
               <img src="assets/img/conversation.svg" alt="" />
               <h1>General Inquiries</h1>
               <p>For any other questions that Claude can’t answer, for now.</p>
@@ -387,9 +397,10 @@
             />
           </label>
 
-          <label for="your-reason">
+          <label for="your-reason" class="w-label">
             Reason for Inquiry *
             <select id="your-reason" name="your-reason" required>
+              <option value="select">Select Inquiry </option>
               <option value="ai-expert">Speak with an AI Expert</option>
               <option value="partnership">Partnership Opportunities</option>
               <option value="employment">Employment Opportunities</option>
@@ -429,7 +440,7 @@
         <div class="main-footer">
           <div class="footerlink">
             <img
-              src="assets/img/riad-cloud4-07-Photoroom-2.webp"
+              src="assets/img/FInal-02.png"
               alt="Company Logo"
             />
           </div>
@@ -439,16 +450,10 @@
             <li><a href="#">Services</a></li>
             <li><a href="#">Industries</a></li>
           </ul>
-          <div class="footer-icon d-flex">
-            <a href="https://www.linkedin.com/company/riad-cloud-consulting/">
-              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-            </a>
-            <a href="https://x.com/RiadCloud">
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
-            <a href="https://github.com/RiadCloud">
-              <i class="fa-brands fa-github" aria-hidden="true"></i>
-            </a>
+          <div class="footer-icon">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
           </div>
         </div>
         <div class="border-line"></div>
@@ -456,8 +461,8 @@
       <div class="footer2">
         <div class="reserved">
           <h1>
-            <a href="">Privacy Policy</a> <a href="">|</a>
-            <a href="">Terms of Use</a>
+            <a href="PrivacyPolicy.html">Privacy Policy</a> <a href="">|</a>
+            <a href="TermsofService.html">Terms of Use</a>
           </h1>
         </div>
         <div class="reserved2">

@@ -19,121 +19,87 @@ closeMenuBtn.addEventListener("click", () => {
 
 gsap.registerPlugin(ScrollTrigger);
 
-const scrollLimit = 20; // Define the scroll limit in pixels
+const scrollLimit = 20;
 
-// document.querySelectorAll(".parallax").forEach((section, index) => {
-//   ScrollTrigger.create({
-//     trigger: section,
-//     start: "top 99%",
-//     end: "bottom 1%",
-//     onEnter: (self) => {
-//       const scrollPos = window.scrollY;
-//       const sectionTop = section.offsetTop;
-//       if (Math.abs(scrollPos - sectionTop) > scrollLimit) {
-//         gsap.to(window, {
-//           scrollTo: { y: sectionTop, autoKill: false },
-//           duration: 1.5,
-//           ease: "power2.inOut",
-//         });
-//       }
-//     },
-//   });
+document
+  .querySelectorAll(".parallax")
+  .forEach((parallaxSection, sectionIndex) => {
+    parallaxSection
+      .querySelectorAll(".parallax-image>div")
+      .forEach((imageDiv) => {
+        ScrollTrigger.create({
+          trigger: parallaxSection,
+          start: "top 10%",
+          end: "bottom 10%",
+          scrub: true,
+          onEnter: () => {
+            gsap.to(imageDiv, { scale: 1.3, duration: 40 });
+          },
+          onLeaveBack: () => {
+            gsap.to(imageDiv, { scale: 1, duration: 40 });
+          },
+        });
+      });
+    if (sectionIndex != 0) {
+      const bg = parallaxSection.querySelector(".parallax-bg>div");
 
-//   ScrollTrigger.create({
-//     trigger: section,
-//     start: "100% 1%",
-//     end: "0% 99%",
-//     onEnterBack: (self) => {
-//       const scrollPos = window.scrollY;
-//       const sectionTop = section.offsetTop;
-//       if (Math.abs(scrollPos - sectionTop) > scrollLimit) {
-//         gsap.to(window, {
-//           scrollTo: { y: sectionTop, autoKill: false },
-//           duration: 1.5,
-//           ease: "power2.inOut",
-//         });
-//       }
-//     },
-//   });
-// });
-
-document.querySelectorAll(".parallax").forEach((parallaxSection, sectionIndex) => {
-  parallaxSection.querySelectorAll(".parallax-image>div").forEach((imageDiv) => {
-    ScrollTrigger.create({
-      trigger: parallaxSection,
-      start: "top 10%",
-      end: "bottom 10%",
-      scrub: true,
-      onEnter: () => {
-        gsap.to(imageDiv, { scale: 1.3, duration: 40 });
-      },
-      onLeaveBack: () => {
-        gsap.to(imageDiv, { scale: 1, duration: 40 });
-      },
-    });
-  });
-  if (sectionIndex!= 0) {
-    const bg = parallaxSection.querySelector(".parallax-bg>div");
-
-    ScrollTrigger.create({
-      trigger: parallaxSection,
-      start: "top 10%",
-      end: "bottom 10%",
-      scrub: true,
-      onEnter: () => {
-        gsap.to(bg, { scale: 1.3, duration: 15 });
-      },
-      onLeaveBack: () => {
-        gsap.to(bg, { scale: 1, duration: 15 });
-      },
-    });
-  }
-
-
-  const bg2 = parallaxSection.querySelector(".parallax-bg");
-  ScrollTrigger.create({
-    trigger: parallaxSection,
-    start: "0% 100%",
-    end: "0% 50%",
-    onEnter: () => {
-      gsap.to(bg2, { opacity: 1, duration: 1 });
-    },
-    onLeaveBack: () => {
-      gsap.to(bg2, { opacity: 0, duration: 1 });
-    },
-  });
-
-  const txt = parallaxSection.querySelector(".parallax-textbox");
-  gsap.fromTo(
-    txt,
-    { y: 1600 }, // Start slightly below and invisible
-    {
-      y: 0,
-      scrollTrigger: {
-        trigger: parallaxSection, // Trigger on the parent section
-        start: "50% 90%",
-        end: "50% 60%",
+      ScrollTrigger.create({
+        trigger: parallaxSection,
+        start: "top 10%",
+        end: "bottom 10%",
         scrub: true,
-        toggleActions: "play none none reverse",
-      },
+        onEnter: () => {
+          gsap.to(bg, { scale: 1.3, duration: 15 });
+        },
+        onLeaveBack: () => {
+          gsap.to(bg, { scale: 1, duration: 15 });
+        },
+      });
     }
-  );
 
-  const contentMain = parallaxSection.querySelector(".parallax-content");
-  const content = parallaxSection.querySelector(".parallax-content>div");
-  if (contentMain & content) {
-    gsap.to(content, {
-      scrollTrigger: {
-        trigger: contentMain, // The parallax section ID
-        start: "top top", // When the top of the section reaches the top of the viewport
-        end: "+=120%", // Extend the scroll time by 200% of the viewport height
-        pin: true, // Pin the content in place
-        scrub: true,
+    const bg2 = parallaxSection.querySelector(".parallax-bg");
+    ScrollTrigger.create({
+      trigger: parallaxSection,
+      start: "0% 100%",
+      end: "0% 50%",
+      onEnter: () => {
+        gsap.to(bg2, { opacity: 1, duration: 1 });
+      },
+      onLeaveBack: () => {
+        gsap.to(bg2, { opacity: 0, duration: 1 });
       },
     });
-  }
- 
-});
+
+    const txt = parallaxSection.querySelector(".parallax-textbox");
+    gsap.fromTo(
+      txt,
+      { y: 1600 }, // Start slightly below and invisible
+      {
+        y: 0,
+        scrollTrigger: {
+          trigger: parallaxSection, // Trigger on the parent section
+          start: "50% 90%",
+          end: "50% 60%",
+          scrub: true,
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    const contentMain = parallaxSection.querySelector(".parallax-content");
+    const content = parallaxSection.querySelector(".parallax-content>div");
+    if (contentMain & content) {
+      gsap.to(content, {
+        scrollTrigger: {
+          trigger: contentMain, // The parallax section ID
+          start: "top top", // When the top of the section reaches the top of the viewport
+          end: "+=120%", // Extend the scroll time by 200% of the viewport height
+          pin: true, // Pin the content in place
+          scrub: true,
+        },
+      });
+    }
+  });
 
 // section 1
 
@@ -347,7 +313,6 @@ gsap.fromTo(
 
 // section 4
 
-
 gsap.fromTo(
   "#sec-4 .parallax-brain img",
   { opacity: 0, y: 700 },
@@ -461,15 +426,16 @@ gsap.fromTo(
   }
 );
 
-
 gsap.fromTo(
   "#sec-5 .parallax-smoke img",
   { y: 0, opacity: 1 },
   {
-    y: 200, scale: 1.5, opacity: 0,
+    y: 200,
+    scale: 1,
+    opacity: 0,
     scrollTrigger: {
       trigger: "#sec-5",
-      start: "50% 30%",
+      start: "50% 55%",
       end: "50% 0%",
       scrub: true,
       toggleActions: "play none none reverse",
@@ -508,8 +474,6 @@ gsap.fromTo(
 );
 // section 6
 
-
-
 gsap.fromTo(
   "#sec-6 .parallax-lights img",
   { opacity: 0, y: 750 },
@@ -519,7 +483,7 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: "#sec-6",
       start: "0% 100%",
-      end: "50% 50%",
+      end: "50% 30%",
       scrub: true,
       toggleActions: "play none none reverse",
     },
@@ -534,8 +498,8 @@ gsap.fromTo(
     y: 0,
     scrollTrigger: {
       trigger: "#sec-6",
-      start: "0% 100%",
-      end: "50% 30%",
+      start: "0% 30%",
+      end: "100% 100%",
       scrub: true,
       toggleActions: "play none none reverse",
     },
@@ -634,77 +598,204 @@ $(document).ready(function () {
     },
   ];
 
-  $slider.slick({
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000000,
-    arrows: true,
-    initialSlide: 0,
-    customPaging: function (slider, i) {
-      return '<button data-slide="' + (i + 1) + '"></button>';
-    },
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  });
+  $(document).ready(function () {
+    var $slider = $(".your-slider");
 
-  function updateBackgroundAndContent(slideIndex) {
-    var activeSlide = $('.slick-slide[data-slick-index="' + slideIndex + '"]');
-    var bgImage = activeSlide.css("background-image");
+    function updateBackgroundAndContent(slideIndex) {
+      var activeSlide = $(
+        '.slick-slide[data-slick-index="' + slideIndex + '"]'
+      );
+      var bgImage = activeSlide.css("background-image");
 
-    $(".slider-section .parallax-bg>div").css("background-image", bgImage);
-    var slideData = slideContentData[slideIndex];
-    var slideContent = activeSlide.find("h3").text();
-    var contentHtml =
-      "<h3 class='mainHeading'>" +
-      slideData.mainHeading +
-      "</h3>" +
-      "<h3 class='title2'>" +
-      slideData.title2 +
-      "</h3>" +
-      "<p class='description'>" +
-      slideData.description +
-      "</p>";
+      $(".slider-section .parallax-bg > div").css("background-image", bgImage);
+      var slideData = slideContentData[slideIndex];
+      var slideContent = activeSlide.find("h3").text();
+      var contentHtml =
+        "<h3 class='mainHeading'>" +
+        slideData.mainHeading +
+        "</h3>" +
+        "<h3 class='title2'>" +
+        slideData.title2 +
+        "</h3>" +
+        "<p class='description'>" +
+        slideData.description +
+        "</p>";
 
-    // Conditionally add description2
-    if (slideData.description2) {
-      contentHtml +=
-        "<p class='description2'>" + slideData.description2 + "</p>";
+      // Conditionally add description2
+      if (slideData.description2) {
+        contentHtml +=
+          "<p class='description2'>" + slideData.description2 + "</p>";
+      }
+
+      // Update the .content-div with the prepared content
+      $(".content-div").html(contentHtml);
     }
 
-    // Update the .content-div with the prepared content
-    $(".content-div").html(contentHtml);
+    // Initialize the slider
+    $slider.slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000000,
+      arrows: false, // Disable default arrows
+      initialSlide: 0,
+      customPaging: function (slider, i) {
+        return '<button data-slide="' + (i + 1) + '"></button>';
+      },
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
+
+    // Handle custom arrows
+    $("#left").on("click", function () {
+      $slider.slick("slickPrev");
+    });
+
+    $("#right").on("click", function () {
+      $slider.slick("slickNext");
+    });
+
+    $slider.on("afterChange", function (event, slick, currentSlide) {
+      $(".slick-slide").removeClass("active");
+      $(".slick-active").first().addClass("active");
+      updateBackgroundAndContent(currentSlide);
+    });
+
+    $slider.on("click", ".slick-slide", function (event) {
+      var slideIndex = $(this).data("slick-index");
+      $slider.slick("slickGoTo", slideIndex);
+    });
+
+    $slider.slick("slickGoTo", 0);
+  });
+});
+
+// ----------------- seclect-hover -------------------
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".hero-form");
+  const cards = document.querySelectorAll(".card1");
+
+  form.addEventListener("change", function (event) {
+    if (event.target && event.target.id === "your-reason") {
+      cards.forEach((card) => card.classList.remove("active"));
+
+      const selectedValue = event.target.value;
+
+      const activeCard = document.getElementById(`${selectedValue}-card`);
+      if (activeCard) {
+        activeCard.classList.add("active");
+      }
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".hero-form");
+  const cards = document.querySelectorAll(".card1");
+
+  form.addEventListener("change", function (event) {
+    if (event.target && event.target.id === "your-reason") {
+      cards.forEach((card) => card.classList.remove("active"));
+
+      const selectedValue = event.target.value;
+
+      const activeCard = document.getElementById(`${selectedValue}-card`);
+      if (activeCard) {
+        activeCard.classList.add("active");
+      }
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".hero-form");
+  const cards = document.querySelectorAll(".card1");
+  const selectElement = document.getElementById("your-reason");
+
+  function setSelectValue(value) {
+    selectElement.value = value;
+    selectElement.dispatchEvent(new Event("change"));
   }
 
-  updateBackgroundAndContent(0);
+  // Handle card clicks
+  cards.forEach((card) => {
+    card.addEventListener("click", function () {
+      cards.forEach((c) => c.classList.remove("active"));
 
-  $slider.on("afterChange", function (event, slick, currentSlide) {
-    $(".slick-slide").removeClass("active");
-    $(".slick-active").first().addClass("active");
-    updateBackgroundAndContent(currentSlide);
+      this.classList.add("active");
+
+      const cardId = this.id;
+      let optionValue = "";
+
+      switch (cardId) {
+        case "ai-expert-card":
+          optionValue = "ai-expert";
+          break;
+        case "partnership-card":
+          optionValue = "partnership";
+          break;
+        case "employment-card":
+          optionValue = "employment";
+          break;
+        case "general-card":
+          optionValue = "general";
+          break;
+      }
+
+      // Set the selected value in the dropdown
+      if (optionValue) {
+        setSelectValue(optionValue);
+      }
+    });
   });
 
-  $slider.on("click", ".slick-slide", function (event) {
-    var slideIndex = $(this).data("slick-index");
-    $slider.slick("slickGoTo", slideIndex);
-  });
+  // Handle form dropdown changes
+  form.addEventListener("change", function (event) {
+    if (event.target && event.target.id === "your-reason") {
+      // Remove 'active' class from all cards
+      cards.forEach((card) => card.classList.remove("active"));
 
-  $slider.slick("slickGoTo", 0);
+      // Get the selected value
+      const selectedValue = event.target.value;
+
+      // Add 'active' class to the corresponding card
+      const activeCard = document.getElementById(`${selectedValue}-card`);
+      if (activeCard) {
+        activeCard.classList.add("active");
+      }
+    }
+  });
 });
+
+// ------------------select-hover-end-------------------
+document.addEventListener("DOMContentLoaded", function () {
+  const loader = document.getElementById("loader");
+  const video = document.getElementById("loader-video");
+  
+  video.addEventListener("ended", function () {
+    // Hide the loader and allow scrolling
+    loader.style.display = "none";
+    document.body.classList.remove("no-scroll");
+  });
+}); // Correctly closes the DOMContentLoaded event listener
+
+
+
