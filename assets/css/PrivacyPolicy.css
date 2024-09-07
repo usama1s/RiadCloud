@@ -26,18 +26,13 @@ body{
  color: #fff;
  font-weight: 700;
 }
-.textbox h1{
-font-size: 25px;
-color: #fff;
-margin-bottom: 30px;
-font-weight: 700;
-line-height: 35px;
-}
+.textbox h1{font-size: 25px;color: #fff;margin-bottom: 30px;font-weight: 700;line-height: 35px;margin-top: 20px;}
 .textbox p{
     font-size: 16px;
     color: #fff;
     font-weight: 400;
     line-height: 28px;
+    margin-bottom: 20px;
 }
 .textbox span a{
     color: #fff;
