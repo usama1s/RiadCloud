@@ -1537,7 +1537,7 @@ body.loading {
   }
 
   .parallax-world {
-    transform: translate(-48%, 34%);
+    transform: translate(-48%, 50%);
   }
   .menu-toggle-btn {
     font-size: 0;
