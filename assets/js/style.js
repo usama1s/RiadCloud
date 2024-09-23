@@ -789,7 +789,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const loader = document.getElementById("loader");
   const video = document.getElementById("loader-video");
-  
+
   video.addEventListener("ended", function () {
     // Hide the loader and allow scrolling
     loader.style.display = "none";
@@ -799,3 +799,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+  // Ensure the video is muted and attempts to autoplay
+  const video = document.getElementById('loader-video');
+  video.muted = true;
+  video.play().catch(error => {
+    console.error('Autoplay failed:', error);
+  });
