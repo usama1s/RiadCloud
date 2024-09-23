@@ -760,7 +760,7 @@ html {
 .slider-section {
   position: relative;
   width: 100vw;
-  height: 90vh;
+  height: 85vh;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -825,7 +825,7 @@ html {
   z-index: 1;
   overflow: hidden;
   text-align: center;
-  height: 230px;
+  height: 335px;
   /* width: 248px !important; */
   background-size: cover;
   background-position: center;
@@ -1683,5 +1683,8 @@ body.loading {
   .parallax-smoke {
     width: 97%;
     top: 53%;
+  }
+  .your-slider .slick-slide {
+    height: 222px !important;
   }
 }
