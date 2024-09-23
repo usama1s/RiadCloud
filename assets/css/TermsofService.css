@@ -16,8 +16,8 @@ body{
     padding-top: 180px;    
 }
 .textbox{
-    width: 83%;
-    padding-left: 100px;
+    padding: 0px 120px;
+    text-align: justify;
 }
 .main-textbox h2{
  text-align: center;

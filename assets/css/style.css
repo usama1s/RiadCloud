@@ -70,11 +70,13 @@ img {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
-  background: linear-gradient(90deg,
-      var(--grad1),
-      var(--grad2),
-      var(--grad3),
-      var(--grad4));
+  background: linear-gradient(
+    90deg,
+    var(--grad1),
+    var(--grad2),
+    var(--grad3),
+    var(--grad4)
+  );
   background-size: 400%;
   z-index: 1;
   position: relative;
@@ -105,11 +107,13 @@ img {
   right: -5px;
   bottom: -5px;
   z-index: 0;
-  background: linear-gradient(90deg,
-      var(--grad1),
-      var(--grad2),
-      var(--grad3),
-      var(--grad4));
+  background: linear-gradient(
+    90deg,
+    var(--grad1),
+    var(--grad2),
+    var(--grad3),
+    var(--grad4)
+  );
   background-size: 400%;
   border-radius: 100px;
   opacity: 0;
@@ -138,9 +142,11 @@ img {
   height: 100%;
   top: 0;
   content: "";
-  background: linear-gradient(90deg,
-      rgba(0, 5, 70, 0.7) 0%,
-      rgba(0, 0, 0, 0.9) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 5, 70, 0.7) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
 }
 
 .form {
@@ -247,9 +253,11 @@ img {
 }
 
 .card1:hover {
-  background: linear-gradient(216deg,
-      rgba(15, 28, 122, 1) 0%,
-      rgba(14, 2, 31, 1) 100%);
+  background: linear-gradient(
+    216deg,
+    rgba(15, 28, 122, 1) 0%,
+    rgba(14, 2, 31, 1) 100%
+  );
 }
 
 .card1 img {
@@ -349,10 +357,12 @@ img {
 .border-line {
   width: 100%;
   height: 2px;
-  background: linear-gradient(216deg,
-      rgb(18, 20, 55) 5%,
-      rgb(255, 255, 255) 50%,
-      rgb(18, 20, 55) 95%);
+  background: linear-gradient(
+    216deg,
+    rgb(18, 20, 55) 5%,
+    rgb(255, 255, 255) 50%,
+    rgb(18, 20, 55) 95%
+  );
 }
 
 .border-line2 {
@@ -370,7 +380,7 @@ img {
 .hero-section {
   position: relative;
   overflow: hidden;
-  background-image: url('../img/Timeline\ 1_01_00_08_02.jpg');
+  background-image: url("../img/Timeline\ 1_01_00_08_02.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -495,11 +505,13 @@ img {
 .scroller[data-animated="true"] .scroller__inner {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
 }
 
 .scroller[data-animated="true"] .scroller__inner.inner-2 {
-  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, reverse) linear infinite;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, reverse) linear infinite;
 }
 
 .scroller[data-direction="right"] {
@@ -532,9 +544,6 @@ img {
   display: none;
 }
 
-
-
-
 body,
 html {
   margin: 0;
@@ -565,7 +574,7 @@ html {
   transition: opacity 1s ease-in-out;
 }
 
-.parallax-bg>div {
+.parallax-bg > div {
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -581,7 +590,7 @@ html {
   margin: auto;
 }
 
-.parallax-content>div {
+.parallax-content > div {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -713,9 +722,9 @@ html {
 
 .parallax-world {
   position: absolute;
-  bottom: 0;
+  bottom: 124px;
   left: 50%;
-  width: 125%;
+  width: 161%;
   transform: translate(-45%, 58%);
 }
 
@@ -749,7 +758,7 @@ html {
 .slider-section {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -762,7 +771,7 @@ html {
   overflow: hidden;
 }
 
-.slider-section .parallax-bg>div::before {
+.slider-section .parallax-bg > div::before {
   content: "";
   position: absolute;
   top: 0;
@@ -814,7 +823,7 @@ html {
   z-index: 1;
   overflow: hidden;
   text-align: center;
-  height: 320px;
+  height: 230px;
   /* width: 248px !important; */
   background-size: cover;
   background-position: center;
@@ -895,7 +904,7 @@ html {
 .slick-dots {
   position: absolute;
   left: 15px;
-  top: 50%;
+  top: 55%;
   width: auto;
   transform: translateY(-50%);
   display: flex;
@@ -1064,11 +1073,13 @@ html {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
-  background: linear-gradient(90deg,
-      var(--grad1),
-      var(--grad2),
-      var(--grad3),
-      var(--grad4));
+  background: linear-gradient(
+    90deg,
+    var(--grad1),
+    var(--grad2),
+    var(--grad3),
+    var(--grad4)
+  );
   background-size: 400%;
   z-index: 1;
   position: relative;
@@ -1099,11 +1110,13 @@ html {
   right: -5px;
   bottom: -5px;
   z-index: 0;
-  background: linear-gradient(90deg,
-      var(--grad1),
-      var(--grad2),
-      var(--grad3),
-      var(--grad4));
+  background: linear-gradient(
+    90deg,
+    var(--grad1),
+    var(--grad2),
+    var(--grad3),
+    var(--grad4)
+  );
   background-size: 400%;
   border-radius: 100px;
   opacity: 0;
@@ -1119,10 +1132,12 @@ html {
 .border-line2 {
   width: 100%;
   height: 1px;
-  background: linear-gradient(216deg,
-      rgb(18, 20, 55) 5%,
-      rgb(255, 255, 255) 50%,
-      rgb(18, 20, 55) 95%);
+  background: linear-gradient(
+    216deg,
+    rgb(18, 20, 55) 5%,
+    rgb(255, 255, 255) 50%,
+    rgb(18, 20, 55) 95%
+  );
 }
 
 .menu-footer h1 {
@@ -1135,6 +1150,66 @@ html {
   gap: 9px;
   text-align: center;
   justify-content: center;
+}
+
+.arrow {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 30px;
+  left: 100px;
+  gap: 20px;
+  z-index: 20;
+}
+
+.arrow i {
+  font-size: 1.5rem;
+  color: white;
+  pointer-events: auto;
+  padding: 7px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card1.active {
+  background: linear-gradient(
+    216deg,
+    rgba(15, 28, 122, 1) 0%,
+    rgba(14, 2, 31, 1) 100%
+  );
+}
+
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* Loader Styles */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+#loader-video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: fill;
+}
+
+body.loading {
+  overflow: hidden;
 }
 
 @media (max-width: 1100px) {
@@ -1221,13 +1296,14 @@ html {
   }
 }
 
-@media (max-width: 992px) {}
+@media (max-width: 992px) {
+}
 
 @media (max-width: 767px) {
- .parallax-content {
- justify-content: end;
- align-items: end;
- }
+  .parallax-content {
+    justify-content: end;
+    align-items: end;
+  }
   .parallax-textbox {
     width: 70%;
   }
@@ -1249,15 +1325,15 @@ html {
     padding-right: 12px;
     justify-content: flex-end;
   }
-  
-  .animated-textbar ul{
+
+  .animated-textbar ul {
     gap: 10px;
   }
-  
-  .scroller-img{
+
+  .scroller-img {
     width: 110px;
   }
-  
+
   .slick-dots {
     gap: 9px;
   }
@@ -1331,7 +1407,7 @@ html {
 
   .parallax-hand-img {
     width: 50%;
-    top: 68%;
+    top: 78%;
   }
 
   .parallax-brain {
@@ -1383,7 +1459,6 @@ html {
     padding-left: 50px;
     display: flex;
     flex-direction: column-reverse;
-
   }
 
   .mainHeading {
@@ -1405,10 +1480,10 @@ html {
   }
 
   .content-div {
-    /* gap: 10px; */
+    gap: 6px;
   }
 
-  .parallax-content>div {
+  .parallax-content > div {
     margin: 0;
     padding-left: 15px;
   }
@@ -1432,7 +1507,7 @@ html {
   }
 
   .parallax-key {
-    top: 24%;
+    top: 42%;
   }
 
   .parallax-brain {
@@ -1445,7 +1520,7 @@ html {
   }
 
   .parallax-hand-img {
-    width: 52% !important;
+    width: 56% !important;
   }
 
   .your-slider {
@@ -1461,30 +1536,9 @@ html {
   .parallax-world {
     transform: translate(-45%, 50%);
   }
-
-  .parallax-bubble1 {
-    bottom: 5%;
+  .menu-toggle-btn {
+    font-size: 0;
   }
-
-  .parallax-bubble2 {
-    bottom: 12%;
-  }
-  .menu-toggle-btn {font-size: 0;
-  }
-
-}
-
-@media (max-width: 490px) {
-  .Hero-textbox h1 {
-    display: none;
-  }
-
-  .Hero-textbox {
-    display: none;
-  }
-}
-
-@media (max-width: 470px) {
   .main-footer ul li a {
     padding: 9px;
   }
@@ -1493,7 +1547,7 @@ html {
     width: 100%;
   }
 
-  .parallax-content>div {
+  .parallax-content > div {
     margin: 0;
     padding-left: 15px;
     width: 100%;
@@ -1551,13 +1605,13 @@ html {
 
   .parallax-hand {
     width: 60%;
-    top: 28%;
+    top: 46%;
   }
 
   .parallax-light {
     right: 17px;
     width: 58%;
-    top: 3%;
+    top: 29%;
   }
 
   .parallax-key {
@@ -1566,34 +1620,43 @@ html {
   }
 
   .parallax-bubble1 {
-    bottom: 9%;
+    top: 58%;
     width: 45%;
   }
 
   .parallax-bubble2 {
-    bottom: 9%;
+    top: 60%;
     width: 45%;
+  }
+  .parallax-bubble3 {
+    top: 61%;
   }
 
   .parallax-brain {
     width: 35%;
+    top: 48%;
   }
 
   .parallax-hand-img {
     width: 52%;
+    top: 63%;
   }
 
   .parallax-rocket {
-    width: 65%;
+    width: 72%;
     right: -10%;
+    top: 80%;
   }
 
   .parallax-booot {
-    width: 28%;
+    width: 47%;
+    top: 55%;
   }
 
   .parallax-lights {
-    width: 25%;
+    width: 30%;
+    top: 38%;
+    right: 75px;
   }
 
   .mainHeading {
@@ -1615,69 +1678,7 @@ html {
   }
 
   .parallax-smoke {
-    width: 78%;
-    /* top: 56%; */
+    width: 97%;
+    top: 53%;
   }
-}
-
-.arrow {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  bottom: 30px;
-  left: 100px;
-  gap: 20px;
-  z-index: 20;
-}
-
-.arrow i {
-  font-size: 1.5rem;
-  color: white;
-  pointer-events: auto;
-  padding: 7px;
-  background-color: transparent;
-  border: 1px solid white;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.card1.active {
-  background: linear-gradient(216deg,
-      rgba(15, 28, 122, 1) 0%,
-      rgba(14, 2, 31, 1) 100%);
-}
-
-.no-scroll {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-}
-
-/* Loader Styles */
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-}
-
-#loader-video {
-  width: 100%;
-  height: 100%;
-  /* object-fit: cover; */
-  /* object-fit: scale-down; */
-  object-fit: fill;
-  /* object-fit: contain; */
-  /* object-fit: none; */
-}
-
-body.loading {
-  overflow: hidden;
 }
