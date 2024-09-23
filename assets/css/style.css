@@ -5,6 +5,7 @@ html {
 * {
   padding: 0px;
   margin: 0px;
+  font-family: "Poppins", sans-serif;
 }
 
 img {
@@ -1203,9 +1204,10 @@ html {
 }
 
 #loader-video {
-  max-width: 100%;
+  width: 100%;
   max-height: 100%;
   object-fit: fill;
+  object-fit: cover;
 }
 
 body.loading {
@@ -1402,7 +1404,7 @@ body.loading {
   }
 
   .parallax-bubble3 {
-    width: 30%;
+    width: 36%;
   }
 
   .parallax-hand-img {
@@ -1507,12 +1509,12 @@ body.loading {
   }
 
   .parallax-key {
-    top: 42%;
+    top: 20%;
   }
 
   .parallax-brain {
     width: 35%;
-    right: 15%;
+    right: 24%;
   }
 
   .parallax-booot {
@@ -1520,7 +1522,7 @@ body.loading {
   }
 
   .parallax-hand-img {
-    width: 56% !important;
+    width: 82% !important;
   }
 
   .your-slider {
@@ -1534,7 +1536,7 @@ body.loading {
   }
 
   .parallax-world {
-    transform: translate(-45%, 50%);
+    transform: translate(-48%, 34%);
   }
   .menu-toggle-btn {
     font-size: 0;
@@ -1604,59 +1606,59 @@ body.loading {
   }
 
   .parallax-hand {
-    width: 60%;
-    top: 46%;
+    width: 68%;
+    top: 52%;
   }
 
   .parallax-light {
     right: 17px;
-    width: 58%;
-    top: 29%;
+    width: 67%;
+    top: 14%;
   }
 
   .parallax-key {
     right: 4%;
-    width: 30%;
+    width: 43%;
   }
 
   .parallax-bubble1 {
-    top: 58%;
-    width: 45%;
+    top: 45%;
+    width: 49%;
   }
 
   .parallax-bubble2 {
-    top: 60%;
-    width: 45%;
+    top: 46%;
+    width: 48%;
   }
   .parallax-bubble3 {
-    top: 61%;
+    top: 53%;
   }
 
   .parallax-brain {
-    width: 35%;
-    top: 48%;
+    width: 53%;
+    top: 28%;
   }
 
   .parallax-hand-img {
     width: 52%;
-    top: 63%;
+    top: 54%;
   }
 
   .parallax-rocket {
-    width: 72%;
-    right: -10%;
-    top: 80%;
+    width: 87%;
+    right: -14%;
+    top: 73%;
   }
 
   .parallax-booot {
-    width: 47%;
-    top: 55%;
+    width: 62%;
+    top: 41%;
   }
 
   .parallax-lights {
-    width: 30%;
-    top: 38%;
-    right: 75px;
+    width: 37%;
+    top: 17%;
+    right: 149px;
   }
 
   .mainHeading {
