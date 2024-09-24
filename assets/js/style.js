@@ -797,9 +797,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 }); // Correctly closes the DOMContentLoaded event listener
 
-
-
-  // Ensure the video is muted and attempts to autoplay
+  //------------- video in iphone iso -------------------
   const video = document.getElementById('loader-video');
   video.muted = true;
   video.play().catch(error => {
