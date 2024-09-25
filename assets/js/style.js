@@ -45,7 +45,7 @@ document
 
       ScrollTrigger.create({
         trigger: parallaxSection,
-        start: "top 10%",
+        start: "bottom 50%",
         end: "bottom 10%",
         scrub: true,
         onEnter: () => {
@@ -105,7 +105,7 @@ document
 
 gsap.fromTo(
   "#sec-1 .parallax-flower img",
-  { opacity: 0, y: 400 },
+  { opacity: 0, y: 600 },
   {
     opacity: 1,
     y: 0,
@@ -430,7 +430,7 @@ gsap.fromTo(
   "#sec-5 .parallax-smoke img",
   { y: 0, opacity: 1 },
   {
-    y: 200,
+    y: 400,
     scale: 1,
     opacity: 0,
     scrollTrigger: {
