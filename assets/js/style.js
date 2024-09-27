@@ -450,7 +450,7 @@ gsap.fromTo(
     opacity: 0,
     scrollTrigger: {
       trigger: "#sec-5",
-      start: "100% 85%",
+      start: "100% 95%",
       end: "100% 60%",
       scrub: true,
       toggleActions: "play none none reverse",

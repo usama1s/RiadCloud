@@ -708,6 +708,7 @@ html {
 }
 
 .parallax-rocket {
+  z-index: 1;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -721,15 +722,17 @@ html {
   /* transform: translateY(-50%); */
   right: 7%;
   width: 70%;
-  z-index: 1;
+  z-index: 3;
 }
 
 .parallax-world {
   position: absolute;
-  bottom: 124px;
+  bottom: -16%;
   left: 50%;
-  width: 161%;
-  transform: translate(-45%, 58%);
+  width: 96%;
+  transform: translate(-35%, 58%);
+  z-index: 0;
+  
 }
 
 .parallax-world img {
@@ -1536,7 +1539,9 @@ body.loading {
   }
 
   .parallax-world {
-    transform: translate(-48%, 50%);
+    /* transform: translate(-48%, 50%); */
+    bottom: -8%;
+    width: 80%;
   }
   .menu-toggle-btn {
     font-size: 0;
@@ -1647,7 +1652,7 @@ body.loading {
   .parallax-rocket {
     width: 87%;
     right: -14%;
-    top: 73%;
+    top: 90%;
     z-index: 1;
   }
 
@@ -1683,7 +1688,7 @@ body.loading {
   .parallax-smoke {
     width: 97%;
     /* top: 53%; */
-    bottom: -14%;
+    bottom: -7%;
   }
   .your-slider .slick-slide {
     height: 222px !important;
