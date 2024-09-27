@@ -717,7 +717,7 @@ html {
 
 .parallax-smoke {
   position: absolute;
-  bottom: 0%;
+  bottom: -20%;
   /* transform: translateY(-50%); */
   right: 7%;
   width: 70%;
@@ -1531,8 +1531,8 @@ body.loading {
   }
 
   .parallax-smoke {
-    width: 67%;
-    top: 68%;
+    /* width: 67%; */
+    /* top: 68%; */
   }
 
   .parallax-world {
@@ -1648,6 +1648,7 @@ body.loading {
     width: 87%;
     right: -14%;
     top: 73%;
+    z-index: 1;
   }
 
   .parallax-booot {
@@ -1681,7 +1682,8 @@ body.loading {
 
   .parallax-smoke {
     width: 97%;
-    top: 53%;
+    /* top: 53%; */
+    bottom: -14%;
   }
   .your-slider .slick-slide {
     height: 222px !important;

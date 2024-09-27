@@ -101,6 +101,21 @@ document
     }
   });
 
+
+  gsap.fromTo(
+    ".hero-section",
+    { opacity: 1},
+    {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".hero-section",
+        start: "bottom 50%",
+        end: "bottom 0%",
+        scrub: true,
+        toggleActions: "play none none reverse",
+      },
+    }
+  );
 // section 1
 
 gsap.fromTo(
@@ -418,8 +433,8 @@ gsap.fromTo(
     y: 0,
     scrollTrigger: {
       trigger: "#sec-5",
-      start: "0% 100%",
-      end: "40% 60%",
+      start: "100% 100%",
+      end: "100% 95%",
       scrub: true,
       toggleActions: "play none none reverse",
     },
@@ -428,16 +443,17 @@ gsap.fromTo(
 
 gsap.fromTo(
   "#sec-5 .parallax-smoke img",
-  { y: 0, opacity: 1 },
+  { y: 0, opacity: 1, scale: 1 },
   {
-    y: 400,
-    scale: 1,
+    y: 800,
+    scale: 0.2,
     opacity: 0,
     scrollTrigger: {
       trigger: "#sec-5",
-      start: "50% 55%",
-      end: "50% 0%",
+      start: "100% 85%",
+      end: "100% 60%",
       scrub: true,
+      markers: true,
       toggleActions: "play none none reverse",
     },
   }
@@ -451,8 +467,8 @@ gsap.fromTo(
     y: 0,
     scrollTrigger: {
       trigger: "#sec-5",
-      start: "0% 100%",
-      end: "80% 60%",
+      start: "80% 100%",
+      end: "80% 80%",
       scrub: true,
       toggleActions: "play none none reverse",
     },
@@ -460,14 +476,15 @@ gsap.fromTo(
 );
 gsap.fromTo(
   "#sec-5 .parallax-world img",
-  { opacity: 1, scale: 1 },
+  { opacity: 1, scale: 1, y: 0 },
   {
     opacity: 0,
     scale: 0.2,
+    y: 400,
     scrollTrigger: {
       trigger: "#sec-6", // Trigger on the parent section
-      start: "0% 100%", // When the top of the section hits the top of the viewport
-      end: "20% 60%", // When the bottom of the section hits the top of the viewport
+      start: "0% 90%", // When the top of the section hits the top of the viewport
+      end: "0% 70%",
       scrub: true,
     },
   }
