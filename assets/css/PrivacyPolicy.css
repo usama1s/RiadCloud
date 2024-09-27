@@ -1,55 +1,60 @@
-*{
-    padding: 0px;
-    margin: 0px;
-
+* {
+  padding: 0px;
+  margin: 0px;
 }
-body{
-    background-color: #121437;
-    font-family: "Poppins", sans-serif;
-
+body {
+  background-color: #121437;
+  font-family: "Poppins", sans-serif;
 }
-.footer-box{
-    position: absolute;
-    width: 100%;
+.footer-box {
+  position: absolute;
+  width: 100%;
 }
-.main-textbox{
-    padding-top: 180px;    
+.main-textbox {
+  padding-top: 180px;
 }
-.textbox{
-     padding: 0px 120px;
-     text-align: justify;
+.textbox {
+  padding: 0px 120px;
+  text-align: justify;
 }
-.main-textbox h2{
- text-align: center;
- font-size: 27px;
- margin-bottom: 40px;
- color: #fff;
- font-weight: 700;
+.main-textbox h2 {
+  text-align: center;
+  font-size: 27px;
+  margin-bottom: 40px;
+  color: #fff;
+  font-weight: 700;
 }
-.textbox h1{font-size: 25px;color: #fff;margin-bottom: 30px;font-weight: 700;line-height: 35px;margin-top: 20px;}
-.textbox p{
-    font-size: 16px;
-    color: #fff;
-    font-weight: 400;
-    line-height: 28px;
-    margin-bottom: 20px;
+.textbox h1 {
+  font-size: 27px;
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 700;
+  line-height: 35px;
+  margin-top: 20px;
 }
-.textbox span a{
-    color: #fff;
+.textbox p {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+.textbox span a {
+  color: #fff;
 }
 @media (max-width: 767px) {
-    .textbox{
-        padding: 0px 20px;
-    }
+  .textbox {
+    padding: 0px 20px;
+  }
 }
 @media (max-width: 575px) {
-    .textbox h1{
-        font-size: 18px;
-    }
-    .textbox p{
-        font-size: 14px;
-    }
-    .main-textbox h2{
-        font-size: 23px;
-    }
+  .textbox h1 {
+    font-size: 18px;
+  }
+  .textbox p {
+    font-size: 14px;
+  }
+  .main-textbox h2 {
+    font-size: 23px;
+  }
 }
