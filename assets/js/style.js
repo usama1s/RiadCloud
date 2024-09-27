@@ -453,7 +453,6 @@ gsap.fromTo(
       start: "100% 85%",
       end: "100% 60%",
       scrub: true,
-      markers: true,
       toggleActions: "play none none reverse",
     },
   }
