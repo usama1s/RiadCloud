@@ -1158,7 +1158,7 @@ html {
   display: flex;
   justify-content: space-between;
   bottom: 30px;
-  left: 34px;
+  left: 100px;
   gap: 20px;
   z-index: 20;
 }
