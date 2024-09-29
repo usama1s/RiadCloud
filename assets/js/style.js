@@ -62,7 +62,6 @@ document
       trigger: parallaxSection,
       start: "50% 100%",
       end: "50% 50%",
-      markers: true,
       onEnter: () => {
         gsap.to(bg2, { opacity: 1, duration: 1 });
       },
@@ -755,6 +754,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Handle card clicks
   cards.forEach((card) => {
     card.addEventListener("click", function () {
+      document.querySelector('.form').scrollIntoView({
+        behavior: 'smooth'
+      });
       cards.forEach((c) => c.classList.remove("active"));
 
       this.classList.add("active");

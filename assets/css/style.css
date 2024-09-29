@@ -615,7 +615,7 @@ html {
   line-height: 1.5;
   position: relative;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
@@ -1000,7 +1000,8 @@ html {
 
 .description2 {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 380;
+
   line-height: 25px;
   color: #fff;
 }
@@ -1214,18 +1215,9 @@ html {
 body.loading {
   overflow: hidden;
 }
-.simpletextbox{
-  display: grid;
-  justify-content: start !important;
-  align-items: start !important;
-  padding-bottom: 357px;
-}
+
 
 @media (max-width: 1100px) {
-  #sec-1 .parallax-textbox {
-    width: 91%;
-  }
-
   .border-line2 {
     display: block;
   }
@@ -1310,29 +1302,42 @@ body.loading {
 
 @media (max-width: 767px) {
   .parallax-content {
-    justify-content: end;
+    justify-content: center;
+    align-items: center;
+  }
+  #sec-1 .parallax-textbox{
+    padding: 0;
+  }
+  #sec-5 .parallax-content>div{
+    align-items: start;
+  }
+  .parallax-content > div{
+    width: auto;
+    height: 100%;
     align-items: end;
   }
   .parallax-textbox {
-    width: 70%;
+    width: auto;
+    height: auto;
+    padding: 50px;
   }
 
   .parallax-textbox h2 {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .parallax-textbox h1 {
-    font-size: 50px;
+    font-size: 36px;
   }
 
   .parallax-textbox p {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .content-div {
     padding-left: 0px;
     padding-right: 12px;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
   }
 
   .animated-textbar ul {
@@ -1345,6 +1350,7 @@ body.loading {
 
   .slick-dots {
     gap: 9px;
+    left: 25px;
   }
 
   .Contact-from {
@@ -1368,10 +1374,10 @@ body.loading {
 
   .Hero-textbox {
     text-align: center;
-    bottom: 15px;
-    padding: 0px;
+    /* bottom: 15px; */
+    padding: 0px 20px;
     max-width: none;
-    width: 100%;
+    width: auto;
   }
 
   .Hero-textbox h1 {
@@ -1387,40 +1393,59 @@ body.loading {
   }
 
   .parallax-hand {
-    width: 55%;
-    top: 70%;
+    width: 64%;
+    top: 50%;
+    font-weight: 500;
+    transform: translateY(-50%);
+    right: 0;
   }
 
   .parallax-light {
-    right: -25px;
+    left: 50%;
+    transform: translate(-50%, 0);
     width: 55%;
+    top: 0;
   }
 
   .parallax-key {
-    right: 8%;
-    width: 35%;
+    left: 50%;
+    transform: translate(-50%,0);
+    top: 8%;
   }
 
   .parallax-bubble1 {
-    left: 34%;
-    width: 45%;
+    bottom: auto;
+    top: 18%;
+    width: 63%;
+    left: 50%;
+    transform: translate(-50%,0);
   }
 
   .parallax-bubble2 {
     width: 45%;
+    top: 50%;
+    bottom: auto;
   }
 
   .parallax-bubble3 {
     width: 47%;
+    bottom: auto;
+    top: 50%;
   }
 
   .parallax-hand-img {
-    width: 65%;
-    top: 78%;
+    width: 85%;
+    top: 32%;
+    right: 30%;
+    transform: translate(50%,0);
   }
 
   .parallax-brain {
-    width: 40%;
+    width: 55%;
+    left: 50%;
+    transform: translate(-50%,0);
+    top: 0;
+    right: auto;
   }
 
   .parallax-flower {
@@ -1428,27 +1453,62 @@ body.loading {
   }
 
   .parallax-rocket {
-    width: 70%;
-    right: -40px;
+    width: 100%;
+    bottom: 0;
+    transform: translate(-50%,0);
+    left: 65%;
   }
 
   .parallax-smoke {
-    width: 38%;
+    width: 160%;
+    bottom: 3%;
+    transform: translate(50%,0);
+    right: 50%;
   }
-
+.parallax-world{
+  bottom: 0%;
+}
   .parallax-booot {
-    width: 38%;
-    top: 65%;
+    top: 8%;
+    width: 77%;
+    left: auto;
+    right: 0;
+    transform: translate(50%,0);
   }
 
   .parallax-lights {
-    width: 26%;
-    right: 0;
+    width: 42%;
+    left: 0;
+    right: auto;
+    transform: none;
+    top: 0;
   }
 
   .arrow {
     display: flex !important;
+    left: 20px;
   }
+    .slider-section {
+    padding-left: 75px;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-right: 20px;
+  }
+  .your-slider {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+  }
+    .your-slider .slick-slide {
+    height: 222px !important;
+  }
+  .your-slider h3{
+    font-size: 18px;
+  }
+    .content-div {
+    gap: 6px;
+  }
+
 }
 
 @media (max-width: 576px) {
@@ -1462,12 +1522,6 @@ body.loading {
 
   .parallax-textbox h2 {
     font-size: 22px;
-  }
-
-  .slider-section {
-    padding-left: 50px;
-    display: flex;
-    flex-direction: column-reverse;
   }
 
   .mainHeading {
@@ -1488,14 +1542,6 @@ body.loading {
     line-height: 19px;
   }
 
-  .content-div {
-    gap: 6px;
-  }
-
-  .parallax-content > div {
-    margin: 0;
-    padding-left: 15px;
-  }
 
   .parallax-hand .slick-dots {
     left: 9px;
@@ -1511,13 +1557,6 @@ body.loading {
     font-size: 10px;
   }
 
-  .parallax-light {
-    top: 16%;
-  }
-
-  .parallax-key {
-    top: 20%;
-  }
 
   .parallax-brain {
     width: 35%;
@@ -1525,18 +1564,13 @@ body.loading {
   }
 
   .parallax-booot {
-    transform: translate(11%, -26%);
+    /* transform: translate(11%, -26%); */
   }
 
   .parallax-hand-img {
-    width: 90% !important;
+    /* width: 90% !important; */
   }
 
-  .your-slider {
-    width: 100%;
-    height: 100%;
-    margin-top: 20px;
-  }
 
   .parallax-world {
     bottom: -8%;
@@ -1553,12 +1587,6 @@ body.loading {
     width: 100%;
   }
 
-  .parallax-content > div {
-    margin: 0;
-    padding-left: 15px;
-    width: 100%;
-    padding-right: 6px;
-  }
 
   .footer2 {
     padding: 10px 10px;
@@ -1603,7 +1631,8 @@ body.loading {
   }
 
   .parallax-textbox {
-    width: 100%;
+    /* width: 100%; */
+    padding: 50px 20px;
   }
 
   .parallax-textbox p {
@@ -1611,59 +1640,60 @@ body.loading {
   }
 
   .parallax-hand {
-    width: 75%;
-    top: 52%;
+    top: 41%;
   }
 
   .parallax-light {
-    right: 17px;
-    width: 75%;
-    top: 19%;
+  width: 70%;
   }
 
   .parallax-key {
-    right: 4%;
+    /* right: 4%;
+    width: 55%; */
     width: 55%;
+    top: 0;
   }
 
   .parallax-bubble1 {
-    top: 45%;
-    width: 57%;
+    /* top: 45%; */
+    /* width: 57%; */
   }
 
   .parallax-bubble2 {
-    top: 46%;
-    width: 56%;
+    top: 33%;
+    width: 76%;
   }
   .parallax-bubble3 {
-    top: 53%;
+    top: 25%;
   }
 
   .parallax-brain {
-    width: 70%;
-    top: 21%;
+    width: 75%;
+    top: 4%;
   }
 
   .parallax-hand-img {
-    width: 52%;
-    top: 54%;
+    width: 98%;
+    top: 39%;
   }
 
   .parallax-rocket {
-    width: 87%;
-    right: -14%;
-    top: 73%;
+    /* width: 87%; */
+    /* right: -14%; */
+    /* top: 73%; */
+    bottom: -7%;
+    top: auto;
   }
 
   .parallax-booot {
-    width: 70%;
-    top: 43%;
+    /* width: 70%; */
+    top: 25%;
   }
 
   .parallax-lights {
-    width: 42%;
-    top: 19%;
-    right: 140px;
+    width: 53%;
+    top: -7%;
+    /* right: 140px; */
   }
 
   .description2 {
@@ -1672,14 +1702,9 @@ body.loading {
   }
 
   .parallax-smoke {
-    width: 97%;
-    top: 53%;
+    /* width: 97%; */
+    /* top: 53%; */
   }
-  .your-slider .slick-slide {
-    height: 222px !important;
-  }
-  .your-slider h3{
-    font-size: 18px;
-  }
+
 }
 
