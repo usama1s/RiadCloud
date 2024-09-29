@@ -60,8 +60,9 @@ document
     const bg2 = parallaxSection.querySelector(".parallax-bg");
     ScrollTrigger.create({
       trigger: parallaxSection,
-      start: "0% 100%",
-      end: "0% 50%",
+      start: "50% 100%",
+      end: "50% 50%",
+      markers: true,
       onEnter: () => {
         gsap.to(bg2, { opacity: 1, duration: 1 });
       },
