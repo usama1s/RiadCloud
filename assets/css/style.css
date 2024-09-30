@@ -600,6 +600,9 @@ html {
   z-index: 15;
   height: 100%;
   width: 56%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .parallax-textbox h1 {
@@ -745,8 +748,8 @@ html {
 
 .parallax-booot {
   position: absolute;
-  top: 14%;
-  left: 64%;
+  top: 50%;
+  left: 58%;
   transform: translate(61%, -11%);
   width: 41%;
 }
@@ -759,6 +762,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  max-height: 450px;
 }
 #sec-1 .parallax-textbox h1{
   /* margin-bottom: 90px; */
@@ -1301,6 +1305,9 @@ body.loading {
 }
 
 @media (max-width: 767px) {
+  .scroller[data-speed="fast"]{
+    --_animation-duration: 40s;
+  }
   .parallax-content {
     justify-content: center;
     align-items: center;
@@ -1502,9 +1509,12 @@ body.loading {
   }
     .your-slider .slick-slide {
     height: 222px !important;
+    margin: 0 10px;
+    width: 150px !important;
   }
   .your-slider h3{
-    font-size: 18px;
+    font-size: 14px;
+    left: 10px;
   }
     .content-div {
     gap: 6px;
@@ -1574,8 +1584,8 @@ body.loading {
 
 
   .parallax-world {
-    bottom: -8%;
-    width: 80%;
+    bottom: 3%;
+    width: 156%;
   }
   .menu-toggle-btn {
     font-size: 0;
@@ -1689,6 +1699,7 @@ body.loading {
   .parallax-booot {
     /* width: 70%; */
     top: 25%;
+    right: 15%;
   }
 
   .parallax-lights {
