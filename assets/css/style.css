@@ -64,7 +64,7 @@ img {
   --grad4: #03a9f4;
 }
 
-.navbar-btn button {
+.navbar-btn a {
   padding: 14px 45px;
   border-radius: 100px;
   font-size: 16px;
