@@ -916,7 +916,7 @@ html {
 .slick-dots {
   position: absolute;
   left: 5%;
-  top: 55%;
+  top: 50%;
   width: auto;
   transform: translateY(-50%);
   display: flex;
@@ -1358,6 +1358,8 @@ body.loading {
   .slick-dots {
     gap: 9px;
     left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .Contact-from {
@@ -1518,6 +1520,10 @@ body.loading {
   }
     .content-div {
     gap: 6px;
+    justify-content: flex-end;
+  }
+  .slick-list .slick-track{
+    align-items: flex-start;
   }
 
 }
@@ -1711,11 +1717,6 @@ body.loading {
   .description2 {
     font-size: 14px;
     line-height: 20px;
-  }
-
-  .parallax-smoke {
-    /* width: 97%; */
-    /* top: 53%; */
   }
 
 }
