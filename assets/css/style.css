@@ -1493,6 +1493,7 @@ body.loading {
     display: flex;
     flex-direction: column-reverse;
     padding-right: 20px;
+    padding-bottom: 70px;
   }
   .your-slider {
     width: 100%;
@@ -1678,8 +1679,8 @@ body.loading {
   }
 
   .parallax-rocket {
-    /* width: 87%; */
-    /* right: -14%; */
+    width: 136%;
+    left: 56%;
     /* top: 73%; */
     bottom: -7%;
     top: auto;
@@ -1691,7 +1692,7 @@ body.loading {
   }
 
   .parallax-lights {
-    width: 53%;
+    width: 66%;
     top: -7%;
     /* right: 140px; */
   }
