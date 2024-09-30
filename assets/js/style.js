@@ -427,7 +427,7 @@ gsap.fromTo(
 
 gsap.fromTo(
   "#sec-5 .parallax-smoke img",
-  { opacity: 0, y: 700 },
+  { opacity: 0, y: 1600 },
   {
     opacity: 1,
     y: 0,

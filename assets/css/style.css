@@ -406,6 +406,7 @@ img {
   position: relative;
   /* z-index: 999999999999999; */
   min-height: unset;
+  z-index: 12;
 }
 
 .Technology-text h1 {
@@ -548,7 +549,9 @@ html {
   min-height: 100vh;
   overflow: visible;
 }
-
+#sec-5{
+  /* overflow: hidden !important;!i;!; */
+}
 .parallax-bg {
   position: fixed;
   top: 0;
@@ -611,6 +614,7 @@ html {
   font-weight: 900;
   margin-bottom: 20px;
   font-family: Inter;
+  width: 100%;
 }
 
 .parallax-textbox h2 {
@@ -717,8 +721,8 @@ html {
 }
 
 .parallax-smoke {
-  position: absolute;
-  bottom: -47%;
+  position: fixed;
+  bottom: 4%;
   /* transform: translateY(-50%); */
   right: -19%;
   width: 98%;
@@ -765,7 +769,11 @@ html {
   max-height: 450px;
 }
 #sec-1 .parallax-textbox h1{
-  /* margin-bottom: 90px; */
+  max-width: 830px;
+  text-align: center;
+}
+#sec-1 .parallax-textbox p{
+  text-align: center;
 }
 .slider-section {
   position: relative;
@@ -781,6 +789,7 @@ html {
   box-sizing: border-box;
   transition: background-color 0.6s ease;
   overflow: hidden;
+  z-index: 11;
 }
 
 .slider-section .parallax-bg > div::before {
@@ -877,6 +886,7 @@ html {
   bottom: 13px;
   left: 15px;
   text-align: left;
+  font-family: "Poppins", sans-serif;
 }
 
 .slick-prev,
@@ -983,14 +993,14 @@ html {
 .mainHeading {
   color: #fff;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
   /* max-width: 350px; */
   text-align: left;
 }
 
 .title2 {
   font-size: 28px;
-  font-weight: 800;
+  font-weight: 600;
   color: #fff;
 }
 
@@ -1463,19 +1473,20 @@ body.loading {
 
   .parallax-rocket {
     width: 100%;
-    bottom: 0;
+    bottom: 6%;
     transform: translate(-50%,0);
     left: 65%;
+    top: auto;
   }
 
   .parallax-smoke {
     width: 160%;
-    bottom: 3%;
+    bottom: 5%;
     transform: translate(50%,0);
     right: 50%;
   }
 .parallax-world{
-  bottom: 0%;
+  bottom: 13%;
 }
   .parallax-booot {
     top: 8%;
