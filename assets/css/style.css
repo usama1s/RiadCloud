@@ -5,7 +5,8 @@ html {
 * {
   padding: 0px;
   margin: 0px;
-  font-family: "Poppins", sans-serif;
+  font-family: Inter;
+
 }
 
 img {
@@ -515,7 +516,7 @@ img {
 }
 
 .scroller[data-speed="fast"] {
-  --_animation-duration: 80s;
+  --_animation-duration: 20s;
 }
 
 .scroller[data-speed="slow"] {
@@ -886,7 +887,6 @@ html {
   bottom: 13px;
   left: 15px;
   text-align: left;
-  font-family: "Poppins", sans-serif;
 }
 
 .slick-prev,
@@ -1481,7 +1481,7 @@ body.loading {
 
   .parallax-smoke {
     width: 160%;
-    bottom: 5%;
+    bottom: 17%;
     transform: translate(50%,0);
     right: 50%;
   }
@@ -1526,7 +1526,7 @@ body.loading {
     width: 150px !important;
   }
   .your-slider h3{
-    font-size: 14px;
+    font-size: 17px;
     left: 10px;
   }
     .content-div {
@@ -1553,15 +1553,15 @@ body.loading {
   }
 
   .mainHeading {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .title2 {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .description {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 20px;
   }
 
@@ -1601,8 +1601,8 @@ body.loading {
 
 
   .parallax-world {
-    bottom: 3%;
-    width: 156%;
+    bottom: 13%;
+    width: 283%;
   }
   .menu-toggle-btn {
     font-size: 0;
@@ -1709,14 +1709,14 @@ body.loading {
     width: 136%;
     left: 56%;
     /* top: 73%; */
-    bottom: -7%;
+    bottom: 9%;
     top: auto;
   }
 
   .parallax-booot {
     /* width: 70%; */
     top: 25%;
-    right: 15%;
+    right: 25%;
   }
 
   .parallax-lights {
