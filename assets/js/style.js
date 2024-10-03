@@ -417,10 +417,11 @@ gsap.fromTo(
     y: -400,
     scrollTrigger: {
       trigger: "#sec-5",
-      start: "50% 30%",
-      end: "50% 0%",
+      start: "50% 50%",
+      end: "50% 10%",
       scrub: true,
       toggleActions: "play none none reverse",
+
     },
   }
 );
@@ -450,8 +451,8 @@ gsap.fromTo(
     opacity: 0,
     scrollTrigger: {
       trigger: "#sec-5",
-      start: "100% 95%",
-      end: "100% 60%",
+      start: "90% 95%",
+      end: "100% 70%",
       scrub: true,
       toggleActions: "play none none reverse",
     },
@@ -804,17 +805,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 // ------------------select-hover-end-------------------
 document.addEventListener("DOMContentLoaded", function () {
   const loader = document.getElementById("loader");
   const video = document.getElementById("loader-video");
 
-  video.addEventListener("ended", function () {
-    // Hide the loader and allow scrolling
+  // Check if the page was reloaded or loaded normally
+  if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+    // This means the page was refreshed
+    video.addEventListener("ended", function () {
+      loader.style.display = "none";
+      document.body.classList.remove("no-scroll");
+    });
+  } else {
+    // If it's not a refresh, skip the video
     loader.style.display = "none";
     document.body.classList.remove("no-scroll");
-  });
-}); // Correctly closes the DOMContentLoaded event listener
+  }
+});
 
   //------------- video in iphone iso -------------------
   const video = document.getElementById('loader-video');
@@ -822,3 +831,16 @@ document.addEventListener("DOMContentLoaded", function () {
   video.play().catch(error => {
     console.error('Autoplay failed:', error);
   });
+
+
+  // // ------------------select-hover-end-------------------
+// document.addEventListener("DOMContentLoaded", function () {
+//   const loader = document.getElementById("loader");
+//   const video = document.getElementById("loader-video");
+
+//   video.addEventListener("ended", function () {
+//     // Hide the loader and allow scrolling
+//     loader.style.display = "none";
+//     document.body.classList.remove("no-scroll");
+//   });
+// }); // Correctly closes the DOMContentLoaded event listener
