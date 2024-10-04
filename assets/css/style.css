@@ -619,7 +619,7 @@ html {
   color: #fff;
   font-weight: 900;
   margin-bottom: 20px;
-  font-family: "Poppins", Sans-serif;
+  font-family: Inter;
   width: 100%;
 }
 
@@ -631,6 +631,7 @@ html {
   font-weight: 600;
   margin-bottom: 20px;
   text-transform: uppercase;
+  font-family: Inter;
 }
 
 .parallax-textbox p {
@@ -780,6 +781,7 @@ html {
 }
 #sec-1 .parallax-textbox p{
   text-align: center;
+  font-family: Inter;
 }
 .slider-section {
   position: relative;
