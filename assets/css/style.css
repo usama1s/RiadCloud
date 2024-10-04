@@ -394,7 +394,7 @@ img {
   padding-left: 40px;
   max-width: 420px;
   line-height: 40px;
-  z-index: 1;
+  z-index: 24;
 }
 
 .Hero-textbox h1 {
@@ -724,7 +724,7 @@ html {
   transform: translateY(-50%);
   right: -10%;
   width: 77%;
-  z-index: 11111;
+  z-index: 1;
 }
 
 .parallax-smoke {
@@ -1487,8 +1487,8 @@ body.loading {
   }
 
   .parallax-smoke {
-    width: 160%;
-    bottom: 17%;
+    width: 198%;
+    bottom: 7%;
     transform: translate(50%,0);
     right: 50%;
   }
@@ -1713,7 +1713,7 @@ body.loading {
   }
 
   .parallax-rocket {
-    width: 136%;
+    width: 145%;
     left: 56%;
     /* top: 73%; */
     bottom: 9%;
