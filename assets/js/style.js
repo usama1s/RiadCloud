@@ -811,19 +811,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const loader = document.getElementById("loader");
   const video = document.getElementById("loader-video");
 
-  // Check if the page was reloaded or loaded normally
-  if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
-    // This means the page was refreshed
-    video.addEventListener("ended", function () {
-      loader.style.display = "none";
-      document.body.classList.remove("no-scroll");
-    });
-  } else {
-    // If it's not a refresh, skip the video
+  video.addEventListener("ended", function () {
+    // Hide the loader and allow scrolling
     loader.style.display = "none";
     document.body.classList.remove("no-scroll");
-  }
-});
+  });
+}); // Correctly closes the DOMContentLoaded event listener
 
   //------------- video in iphone iso -------------------
   const video = document.getElementById('loader-video');
@@ -832,4 +825,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error('Autoplay failed:', error);
   });
 
+
+  // // ------------------select-hover-end-------------------
 
