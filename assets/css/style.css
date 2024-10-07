@@ -6,7 +6,6 @@ html {
   padding: 0px;
   margin: 0px;
   font-family: "Poppins", Sans-serif;
-
 }
 
 img {
@@ -85,6 +84,7 @@ img {
   border: none;
   cursor: pointer;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .navbar-btn button:hover {
@@ -641,6 +641,7 @@ html {
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: 1px;
+  font-family: Inter;
 }
 
 .parallax-flower {
@@ -1713,7 +1714,7 @@ body.loading {
   }
 
   .parallax-rocket {
-    width: 145%;
+    width: 166%;
     left: 56%;
     /* top: 73%; */
     bottom: 9%;

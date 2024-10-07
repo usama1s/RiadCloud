@@ -833,14 +833,3 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  // // ------------------select-hover-end-------------------
-// document.addEventListener("DOMContentLoaded", function () {
-//   const loader = document.getElementById("loader");
-//   const video = document.getElementById("loader-video");
-
-//   video.addEventListener("ended", function () {
-//     // Hide the loader and allow scrolling
-//     loader.style.display = "none";
-//     document.body.classList.remove("no-scroll");
-//   });
-// }); // Correctly closes the DOMContentLoaded event listener
