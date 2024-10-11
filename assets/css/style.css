@@ -1340,6 +1340,9 @@ body.loading {
     width: auto;
     height: 100%;
     align-items: end;
+    width: 100% !important;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .parallax-textbox {
     width: auto;
@@ -1353,10 +1356,12 @@ body.loading {
 
   .parallax-textbox h1 {
     font-size: 36px;
+    text-align: left !important;
   }
 
   .parallax-textbox p {
     font-size: 14px;
+    text-align: left !important;
   }
 
   .content-div {
